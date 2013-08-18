@@ -15,6 +15,9 @@
 /* ==========================================================================
    General site specific resets.
    ========================================================================== */
+*{
+    font-size:10px;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -32,13 +35,17 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 10px;
+	font-size: inherit;
 	vertical-align: baseline;
+}
+ul,
+ol{
+    list-style-type:none;
 }
 
 ::selection{
-/*    color: #fff;*/
     background: #59ffd6;
+    background: #f67e69;
 }
 
 body{
@@ -49,9 +56,15 @@ body{
 }
 a, a:hover, a:visited, a:focus{
     text-decoration:none;
-    color: inherit;
     cursor: pointer;
-    font-size:inherit;
+    color:#f45a45;
+}
+a:hover{
+    text-decoration:underline;
+}
+a::selection{
+    background:#666;
+    color:#fff;
 }
 .clear{
     clear:both;
@@ -83,11 +96,8 @@ a, a:hover, a:visited, a:focus{
 }
 .nav-item a{
     font-size: 1.6em;
-    font-style: italic;
 }
-.nav-item a:hover{
-    text-decoration: underline;
-}
+
 /* ==========================================================================
    Site main content.
    ========================================================================== */
@@ -99,12 +109,16 @@ a, a:hover, a:visited, a:focus{
     padding:0 15% 100px;
 }
 .section-title{
-    padding: 20px 0;
+    padding: 0 0 20px;
 
     font-size:4em;
 }
-.section-content p{
+.section-content p,
+.section-content ul{
+    padding:0 0 2em 0;
+    
     font-size:1.4em;
+    line-height:2em;
 }
 
 /* ==========================================================================
