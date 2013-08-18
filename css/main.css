@@ -2,10 +2,113 @@
 /** CSS Document **/
 
 /* ==========================================================================
+   Site colors.
+   ========================================================================== */
+/*
+ * redish orange: #f45333
+ * redish orange light: #f45a45
+ * light blue: #66cccc
+ * light green: #7ce2c9
+ */
+
+/* ==========================================================================
    General site specific resets.
    ========================================================================== */
 
-body{
-    font-size:10px;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 10px;
+	vertical-align: baseline;
 }
 
+::selection{
+    color: #fff;
+    background: #7ce2c9;
+}
+
+body{
+    background: #f45a45;
+    color: #fff;
+}
+a, a:hover, a:visited, a:focus{
+    text-decoration:none;
+    color:#fff;
+    cursor: pointer;
+}
+.clear{
+    clear:both;
+}
+
+/* ==========================================================================
+   Site header.
+   ========================================================================== */
+
+.header{
+    width:70%;
+    padding:20px 15%;
+    
+    color:#fff;
+}
+.header-title{
+    font-size:4em;
+    text-align:right;
+}
+
+/* ==========================================================================
+   Site navigation.
+   ========================================================================== */
+.nav{
+    width:70%;
+    padding:0 15%;    
+}
+.nav-item{
+    float:right;
+    margin: 0 0 0 20px;
+}
+.nav-item a{
+    font-size: 1.6em;
+    font-style: italic;
+}
+.nav-item a:hover{
+    text-decoration: underline;
+}
+/* ==========================================================================
+   Site main content.
+   ========================================================================== */
+.main{
+    
+}
+.section{
+    width:70%;
+    padding:50px 15%;
+}
+.section-title{
+    padding: 20px 0;
+
+    font-size:3em;
+    color:#fff;
+}
+.section-content p{
+    font-size:1.4em;
+}
+
+/* ==========================================================================
+   Site footer.
+   ========================================================================== */
+.footer{
+    
+}
