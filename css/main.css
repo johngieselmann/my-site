@@ -9,6 +9,7 @@
  * redish orange light: #f45a45
  * light blue: #66cccc
  * light green: #7ce2c9
+ * light teal: #59ffd6
  */
 
 /* ==========================================================================
@@ -37,7 +38,7 @@ time, mark, audio, video {
 
 ::selection{
     color: #fff;
-    background: #7ce2c9;
+    background: #59ffd6;
 }
 
 body{
@@ -48,6 +49,7 @@ a, a:hover, a:visited, a:focus{
     text-decoration:none;
     color:#fff;
     cursor: pointer;
+    font-size:inherit;
 }
 .clear{
     clear:both;
@@ -59,12 +61,12 @@ a, a:hover, a:visited, a:focus{
 
 .header{
     width:70%;
-    padding:20px 15%;
+    padding:20px 15% 10px 15%;
     
     color:#fff;
 }
 .header-title{
-    font-size:4em;
+    font-size:5em;
     text-align:right;
 }
 
@@ -73,11 +75,11 @@ a, a:hover, a:visited, a:focus{
    ========================================================================== */
 .nav{
     width:70%;
-    padding:0 15%;    
+    padding:0 15% 50px 15%;
 }
 .nav-item{
     float:right;
-    margin: 0 0 0 20px;
+    margin: 0 5px 0 20px;
 }
 .nav-item a{
     font-size: 1.6em;
@@ -94,12 +96,12 @@ a, a:hover, a:visited, a:focus{
 }
 .section{
     width:70%;
-    padding:50px 15%;
+    padding:0 15% 100px;
 }
 .section-title{
     padding: 20px 0;
 
-    font-size:3em;
+    font-size:4em;
     color:#fff;
 }
 .section-content p{
