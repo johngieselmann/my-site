@@ -95,7 +95,8 @@ a::selection{
     margin: 0 5px 0 20px;
 }
 .nav-item a{
-    font-size: 1.6em;
+    font-size:2em;
+    font-weight:100;
 }
 
 /* ==========================================================================
@@ -106,7 +107,7 @@ a::selection{
 }
 .section{
     width:70%;
-    padding:0 15% 100px;
+    padding:0 15% 100px 15%;
 }
 .section-title{
     padding: 0 0 20px;
@@ -117,7 +118,8 @@ a::selection{
 .section-content ul{
     padding:0 0 2em 0;
     
-    font-size:1.4em;
+    font-size:2em;
+    font-weight:100;
     line-height:2em;
 }
 
@@ -128,13 +130,10 @@ a::selection{
     
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width:1024px) {
     .header{
         width:80%;
-        padding:20px 10% 10px;
-    }
-    .header-title{
-        font-size:4em;
+        padding:20px 10% 10px 10%;
     }
     .nav{
         width:80%;
@@ -146,8 +145,50 @@ a::selection{
     }
 }
 
+@media screen and (max-width: 768px) {
+    .nav{
+        padding:0 5% 80px 5%;
+    }
+    .section{
+        padding: 0 5% 80px 5%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    *{
+        font-size:9px;
+    }
+    .header{
+        width:90%;
+        padding:20px 5% 10px 5%;
+    }
+    .nav{
+        width:90%;
+        padding:0 5% 50px 5%;
+    }
+    .section{
+        width:90%;
+        padding: 0 5% 50px 5%;
+    }
+    .section-content p{
+        padding:0 0 1em 0;
+    }
+}
+
 @media screen and (max-width: 480px) {
-    .header-title{
-        
+    *{
+        font-size:7px;
+    }
+    .header{
+        padding: 10px 5%;
+    }
+    .nav{
+        padding:0 5% 30px 5%;
+    }
+    .section{
+        padding: 0 5% 30px 5%;
+    }
+    .section-title{
+        padding: 0 0 10px 0;
     }
 }
