@@ -75,8 +75,9 @@ a::selection{
    ========================================================================== */
 
 .header{
-    width:70%;
-    padding:20px 15% 10px 15%;    
+/*    width:70%;
+    padding:20px 15% 10px 15%;    */
+    padding:20px 0 10px 0;
 }
 .header-title{
     font-size:5em;
@@ -87,8 +88,9 @@ a::selection{
    Site navigation.
    ========================================================================== */
 .nav{
-    width:70%;
-    padding:0 15% 50px 15%;
+/*    width:70%;
+    padding:0 15% 50px 15%;*/
+    padding: 0 0 50px 0;
 }
 .nav-item{
     float:right;
@@ -103,11 +105,13 @@ a::selection{
    Site main content.
    ========================================================================== */
 .main{
-    
+    width:70%;
+    padding: 0 15%;
 }
 .section{
-    width:70%;
-    padding:0 15% 100px 15%;
+/*    width:70%;
+    padding:0 15% 100px 15%;*/
+    padding: 0 0 100px 0;
 }
 .section-title{
     padding: 0 0 20px;
@@ -127,30 +131,77 @@ a::selection{
    Site footer.
    ========================================================================== */
 .footer{
+/*    width:70%;
+    padding:0 15% 50px 15%;*/
+    padding:0 0 50px 0;
+}
+.social{
     
+}
+.social-link{
+    display:block;
+    float:right;
+    width:60px;
+    height:60px;
+    margin:0 10px 0 0;
+
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    border-radius:30px;
+    background:#f45a45 center no-repeat;
+    color:#fff;
+    text-align:center;
+    font-size:2em;
+    line-height:60px;
+
+    -webkit-transition: background-color 300ms;
+    transition: background-color 300ms;
+}
+.social-link:hover{
+    background-color:#444;
+}
+
+.social-link.twitter{
+    background-image:url("../img/twitter_bird.png");
+}
+.social-link.linkedin{
+    background-position: 17px 14px;
+    background-image:url("../img/linkedin_in.png");
+}
+.social-link.github{
+    background-image:url("../img/github.png");
 }
 
 @media screen and (max-width:1024px) {
-    .header{
+    .main{
         width:80%;
-        padding:20px 10% 10px 10%;
+        padding:0 10%;
+    }
+    .header{
+/*        width:80%;*/
+/*        padding:20px 10% 10px 10%;*/
+        padding:20 0 10px 0;
     }
     .nav{
-        width:80%;
-        padding:0 10% 100px 10%;
+/*        width:80%;*/
+/*        padding:0 10% 100px 10%;*/
+        padding:0 0 100px 0;
     }
     .section{
-        width:80%;
-        padding: 0 10% 100px 10%;
+/*        width:80%;*/
+/*        padding: 0 10% 100px 10%;*/
+        padding:0 0 100px 0;
     }
 }
 
 @media screen and (max-width: 768px) {
     .nav{
-        padding:0 5% 80px 5%;
+/*        padding:0 5% 80px 5%;*/
+        padding:0 0 80px 0;
     }
     .section{
-        padding: 0 5% 80px 5%;
+/*        padding: 0 5% 80px 5%;*/
+        padding:0 0 80px 0;
     }
 }
 
@@ -158,17 +209,24 @@ a::selection{
     *{
         font-size:9px;
     }
-    .header{
+    .main{
         width:90%;
-        padding:20px 5% 10px 5%;
+        padding:0 5%;
+    }
+    .header{
+/*        width:90%;
+        padding:20px 5% 10px 5%;*/
+        padding:20px 0 10px 0;
     }
     .nav{
-        width:90%;
-        padding:0 5% 50px 5%;
+/*        width:90%;
+        padding:0 5% 50px 5%;*/
+        padding:0 0 50px 0;
     }
     .section{
-        width:90%;
-        padding: 0 5% 50px 5%;
+/*        width:90%;
+        padding: 0 5% 50px 5%;*/
+        padding:0 0 50px 0;
     }
     .section-content p{
         padding:0 0 1em 0;
@@ -180,15 +238,19 @@ a::selection{
         font-size:7px;
     }
     .header{
-        padding: 10px 5%;
+/*        padding: 10px 5%;*/
+        padding:10px 0;
     }
     .nav{
-        padding:0 5% 30px 5%;
+/*        padding:0 5% 30px 5%;*/
+        padding: 0 0 30px 0;
     }
     .section{
-        padding: 0 5% 30px 5%;
+/*        padding: 0 5% 30px 5%;*/
+        padding: 0 0 30px 0;
     }
     .section-title{
+/*        padding: 0 0 10px 0;*/
         padding: 0 0 10px 0;
     }
 }
