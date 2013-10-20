@@ -69,6 +69,12 @@ a::selection{
 .clear{
     clear:both;
 }
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
 
 /* ==========================================================================
    Site header.
@@ -176,6 +182,7 @@ a::selection{
    Good stuff.
    ========================================================================== */
 .eggs{
+    display:none;
     position:fixed;
     width:100%;
     bottom:0;

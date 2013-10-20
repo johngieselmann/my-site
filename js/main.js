@@ -78,9 +78,12 @@
                 if (strokes.toString().indexOf(keys) >= 0) {
                     
                     //animate the egg
+                    var container = $(".js-eggs").show();
                     var egg = $(eggs[i]["selector"]);
-                    egg.attr("animate", true);
-                    animating = true;
+                    setTimeout(function() {
+                        egg.attr("animate", true);
+                        animating = true;
+                    }, 0);
 
                     //play the audio if we have it
                     var audio = $(eggs[i]["audio"]);
@@ -97,6 +100,7 @@
                         //now clear the animation attributes
                         setTimeout(function() {
                             egg.removeAttr("animate").removeAttr("deanimate");
+                            container.hide();
                             animating = false;
                             strokes = [];
                         }, 1000);
