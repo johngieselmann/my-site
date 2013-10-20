@@ -178,18 +178,12 @@ a::selection{
 .eggs{
     position:fixed;
     width:100%;
-    height:100%;
-    top:0;
+    bottom:0;
     overflow:hidden;
-}
-.eggs-animate{
-
 }
 .eggs-scorpion{
     width:100%;
     height:100%;
-    max-width:900px;
-    max-height:450px;
 
     font-size:4em;
     font-style: italic;
@@ -197,7 +191,8 @@ a::selection{
 }
 .eggs-scorpion img{
     width:100%;
-    height:100%;
+    max-width:900px;
+    max-height:450px;
 }
 
 @media screen and (max-width:1024px) {
