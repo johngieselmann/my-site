@@ -172,6 +172,34 @@ a::selection{
     background-image:url("../img/github.png");
 }
 
+/* ==========================================================================
+   Good stuff.
+   ========================================================================== */
+.eggs{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    overflow:hidden;
+}
+.eggs-animate{
+
+}
+.eggs-scorpion{
+    width:100%;
+    height:100%;
+    max-width:900px;
+    max-height:450px;
+
+    font-size:4em;
+    font-style: italic;
+    font-weight: bold;
+}
+.eggs-scorpion img{
+    width:100%;
+    height:100%;
+}
+
 @media screen and (max-width:1024px) {
     .main{
         width:80%;
