@@ -1,0 +1,30 @@
+.item {
+    width: 100%;
+}
+
+.item-name {
+    float: left;
+    width: 80%;
+}
+
+.item-price {
+    float: left;
+    width: 20%;
+}
+
+.item-img {
+    float: left;
+    width: 30%;
+
+    text-align: center;
+}
+
+.item-img img {
+    max-width:80%;
+    padding: 0 10%;
+}
+
+.item-desc {
+    float: left;
+    width: 70%;
+}
