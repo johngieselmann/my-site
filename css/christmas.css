@@ -5,23 +5,27 @@
 .item-name {
     float: left;
     width: 80%;
+    padding: 0 0 15px 0;
+
+    font-size: 2em;
 }
 
 .item-price {
     float: left;
     width: 20%;
+    padding: 0 0 15px 0;
+
+    font-size:1.6em;
 }
 
 .item-img {
     float: left;
     width: 30%;
-
-    text-align: center;
 }
 
 .item-img img {
-    max-width:80%;
-    padding: 0 10%;
+    max-width: 90%;
+    padding: 0 0 0 10%;
 }
 
 .item-desc {
