@@ -15,7 +15,8 @@
     width: 20%;
     padding: 0 0 15px 0;
 
-    font-size:1.6em;
+    font-size: 2em;
+    text-align: right;
 }
 
 .item-img {
