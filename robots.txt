@@ -1,3 +1,7 @@
 # robotstxt.org/
 
 User-agent: *
+
+# Christmas stuff
+Disallow: /img/christmas/
+Disallow: /christmas.html
