@@ -2,6 +2,9 @@
 
 User-agent: *
 
+# Resume
+Disallow: /resume.php
+
 # Christmas stuff
 Disallow: /img/christmas/
 Disallow: /christmas.html
