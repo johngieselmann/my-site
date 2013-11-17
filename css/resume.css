@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   General site specific resets.
+   ========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: inherit;
+	vertical-align: baseline;
+}
+
+ul,
+ol{
+    list-style-type:none;
+}
+
+::selection{
+    background: #59ffd6;
+    background: #f67e69;
+}
+
+html {
+    background: #2b2b2b;
+    color: #fff;
+    font-family: "Courier New", Courier, monospace;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+/* Anchor defaults
+   ========================================================================== */
+
+a, a:hover, a:visited, a:focus{
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+    color: #616ce2;
+    color: #67C3E7;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+a::selection{
+/*    background: #666;*/
+    color: #fff;
+}
+
+/* ==========================================================================
+   Vim Stuff
+   ========================================================================== */
+
+.vim-blue {
+    color: #616ce2;
+}
+.vim-teal {
+    color: #00FFFF;
+    color: #00c6c6;
+}
+
+.vim-green {
+    color: #587B18;
+    color: #00c236;
+}
+.vim-yellow {
+    color: #FFFE00;
+}
+
+.vim-orange {
+
+    color: #bb7124;
+}
+
+.vim-purple {
+
+    color: #d245c7;
+}
+
+.vim-com-block {
+
+}
+
+.vim-com-block:before {
+    content: "\00a0*\00a0";
+}
+
+.vim-com-line {
+    padding: 1em 0 0 0;
+}
+
+/* ==========================================================================
+   Main Layout
+   ========================================================================== */
+.header {
+    width: 98%;
+    padding: 1em 1%;
+}
+
+.header-title {
+    font-size: 3em;
+    font-weight: 100;
+}
+.header-subtitle{
+    font-size: 2.4em;
+    font-weight: 100;
+}
+
+.section {
+    float: left;
+    width: 48%;
+    padding: 1em 1%;
+
+    color: #fff;
+    font-size: 1.4em;
+}
+
+.indent {
+    width: 95%;
+    padding: 0 0 0 5%;
+}
+
+/* Comment layout
+   ========================================================================== */
+
+.comment-prop,
+.comment-func {
+    padding-top: 1em;
+}
+
+/* Array layout
+   ========================================================================== */
+
+.array-key:before,
+.array-key:after {
+    color: #fff;
+    content: '"';
+}
+
+.array-col {
+    float: left;
+    padding: 0 .6em 0 0;
+}
+
+.array-eq:before {
+    content: "=>";
+}
+
+.array-val:after {
+    color: #fff;
+    content: ',';
+}
+
+.array-val-str:before {
+    color: #fff;
+    content: '"';
+}
+
+.array-val-str:after {
+    color: #fff;
+    content: '",';
+}
+
+.array-close:after {
+    color: #fff;
+    content: ",";
+}
+
+/* Projects
+   ========================================================================== */
+
+.projects-proj {
+    padding-top: 1em;
+}
+
+.projects-exp {
+    padding: 1em 0 0 0;
+}
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media screen and (max-width: 1150px) {
+    html {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    html {
+        font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 870px) {
+    html {
+        font-size: 12px;
+    }
+
+    .header-title {
+        font-size: 2em;
+    }
+
+    .header-subtitle {
+        font-size: 1.6em;
+    }
+
+    .section {
+        float: none;
+        width: 98%;
+        padding: 2em 1%;
+
+        border-bottom: 1px solid #fff;
+    }
+}
+
