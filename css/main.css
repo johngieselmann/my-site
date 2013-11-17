@@ -1,5 +1,4 @@
 @CHARSET "UTF-8";
-/** CSS Document **/
 
 /* ==========================================================================
    Site colors.
@@ -15,10 +14,6 @@
 /* ==========================================================================
    General site specific resets.
    ========================================================================== */
-*{
-    font-size:10px;
-}
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -32,46 +27,57 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    vertical-align: baseline;
 }
+
+html {
+    font-size:10px;
+}
+
 ul,
-ol{
+ol {
     list-style-type:none;
 }
 
-::selection{
-    background: #59ffd6;
+::selection {
     background: #f67e69;
 }
 
 body{
-    background: #f45a45;
     background: #fff;
-    color: #fff;
     color: #444;
 }
-a, a:hover, a:visited, a:focus{
+
+a, 
+a:hover,
+a:visited,
+a:focus {
     text-decoration:none;
     cursor: pointer;
     color:#f45a45;
 }
-a:hover{
+
+a:hover {
     text-decoration:underline;
 }
-a::selection{
+
+a::selection {
     background:#666;
     color:#fff;
 }
+
 .clear{
     clear:both;
 }
+
 .show{
     display:block;
 }
+
 .hide{
     display:none;
 }
@@ -80,12 +86,23 @@ a::selection{
    Site header.
    ========================================================================== */
 
+.profile {
+    float: left;
+    width: 20%;
+}
+
+.profile img {
+    width: 100%;
+    max-width: 683px;
+}
+
 .header{
-/*    width:70%;
-    padding:20px 15% 10px 15%;    */
     padding:20px 0 10px 0;
 }
 .header-title{
+    float: left;
+    width: 80%;
+
     font-size:5em;
     text-align:right;
 }
@@ -196,7 +213,7 @@ a::selection{
     font-style: italic;
     font-weight: bold;
 }
-.eggs-scorpion img{
+.eggs-scorpion img {
     width:100%;
     max-width:900px;
     max-height:450px;
@@ -208,35 +225,30 @@ a::selection{
         padding:0 10%;
     }
     .header{
-/*        width:80%;*/
-/*        padding:20px 10% 10px 10%;*/
         padding:20 0 10px 0;
     }
     .nav{
-/*        width:80%;*/
-/*        padding:0 10% 100px 10%;*/
         padding:0 0 100px 0;
     }
     .section{
-/*        width:80%;*/
-/*        padding: 0 10% 100px 10%;*/
         padding:0 0 100px 0;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .header-title {
+        font-size: 4.5em;
+    }
     .nav{
-/*        padding:0 5% 80px 5%;*/
         padding:0 0 80px 0;
     }
     .section{
-/*        padding: 0 5% 80px 5%;*/
         padding:0 0 80px 0;
     }
 }
 
 @media screen and (max-width: 600px) {
-    *{
+    html {
         font-size:9px;
     }
     .main{
@@ -244,18 +256,12 @@ a::selection{
         padding:0 5%;
     }
     .header{
-/*        width:90%;
-        padding:20px 5% 10px 5%;*/
         padding:20px 0 10px 0;
     }
     .nav{
-/*        width:90%;
-        padding:0 5% 50px 5%;*/
         padding:0 0 50px 0;
     }
     .section{
-/*        width:90%;
-        padding: 0 5% 50px 5%;*/
         padding:0 0 50px 0;
     }
     .section-content p{
@@ -264,23 +270,25 @@ a::selection{
 }
 
 @media screen and (max-width: 480px) {
-    *{
+    html {
         font-size:7px;
     }
     .header{
-/*        padding: 10px 5%;*/
         padding:10px 0;
     }
+    .header-title {
+        font-size: 3.5em;
+    }
     .nav{
-/*        padding:0 5% 30px 5%;*/
         padding: 0 0 30px 0;
     }
+    .nav-item {
+        margin: 0 0 0 10px;
+    }
     .section{
-/*        padding: 0 5% 30px 5%;*/
         padding: 0 0 30px 0;
     }
     .section-title{
-/*        padding: 0 0 10px 0;*/
         padding: 0 0 10px 0;
     }
 }
