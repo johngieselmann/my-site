@@ -94,6 +94,8 @@ a::selection {
 .profile img {
     width: 100%;
     max-width: 300px;
+
+    border-radius: 500px;
 }
 
 .header{
