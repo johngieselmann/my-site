@@ -16,27 +16,25 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: inherit;
+    vertical-align: baseline;
 }
 
 ul,
-ol{
+ol {
     list-style-type:none;
 }
 
-::selection{
-    background: #59ffd6;
+::selection {
     background: #f67e69;
 }
 
 html {
     background: #2b2b2b;
     color: #fff;
-    font-family: "Courier New", Courier, monospace;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 10px;
 }
@@ -51,8 +49,6 @@ html {
 a, a:hover, a:visited, a:focus{
     text-decoration: none;
     cursor: pointer;
-    color: #fff;
-    color: #616ce2;
     color: #67C3E7;
 }
 
@@ -61,7 +57,6 @@ a:hover{
 }
 
 a::selection{
-/*    background: #666;*/
     color: #fff;
 }
 
@@ -73,30 +68,23 @@ a::selection{
     color: #616ce2;
 }
 .vim-teal {
-    color: #00FFFF;
     color: #00c6c6;
 }
 
 .vim-green {
-    color: #587B18;
     color: #00c236;
 }
+
 .vim-yellow {
     color: #FFFE00;
 }
 
 .vim-orange {
-
-    color: #bb7124;
+    color: #E79200;
 }
 
 .vim-purple {
-
     color: #d245c7;
-}
-
-.vim-com-block {
-
 }
 
 .vim-com-block:before {
