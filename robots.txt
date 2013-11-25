@@ -2,6 +2,9 @@
 
 User-agent: *
 
+# Images
+Disallow: /img/scorpion.png
+
 # Resume
 Disallow: /resume.php
 
