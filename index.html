@@ -22,19 +22,29 @@
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
     
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/html5.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
     <link rel="stylesheet" href="css/animations.css">
-    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+    <!-- LESS CSS Pre-processor -->
+    <link rel="stylesheet/less" type="text/css" href="css/colors.less">
+    <link rel="stylesheet/less" type="text/css" href="css/main.less">
+    <script type="text/javascript" src="js/vendor/less.js"></script>
+
+    <script type="text/javascript" src="js/vendor/modernizr-2.7.0.min.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+
+    <!--
+        CREDITS:
+    -->
 </head>
 <body>
-    <!--[if lt IE 7]>
-        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <main class="main">
-        
+
         <header class="header">
             <figure class="profile">
                 <img src="img/profile.png" alt="John Gieselmann" />
@@ -43,7 +53,7 @@
                 John Gieselmann
             </h1>
         </header>
-        
+
         <nav class="nav">
             <ul>
                 <li class="nav-item">
