@@ -81,66 +81,75 @@ ol {
     border-radius: 500px;
 }
 
-.header {
+.main-header {
     padding: 20px 0 10px 0;
+
+    h1 {
+        float: left;
+        width: 80%;
+
+        font-size: 5em;
+        text-align: right;
+    }
 }
 
-.header-title {
-    float: left;
-    width: 80%;
-
-    font-size: 5em;
-    text-align: right;
-}
 
 /* ==========================================================================
    Site navigation.
    ========================================================================== */
 
-.nav {
+nav {
     padding: 0 0 50px 0;
+
+    li:not(.clear) {
+        float: right;
+        margin: 0 5px 0 20px;
+
+        a {
+            font-size: 2em;
+            font-weight: 100;
+            -webkit-transition: text-decoration 300ms;
+            -moz-transition: text-decoration 300ms;
+            -o-transition: text-decoration 300ms;
+            transition: text-decoration 300ms;
+        }
+    }
 }
 
-.nav-item {
-    float: right;
-    margin: 0 5px 0 20px;
-}
-
-.nav-item a {
-    font-size: 2em;
-    font-weight: 100;
-    -webkit-transition: text-decoration 300ms;
-    -moz-transition: text-decoration 300ms;
-    -o-transition: text-decoration 300ms;
-    transition: text-decoration 300ms;
-}
 
 /* ==========================================================================
    Site main content.
    ========================================================================== */
-.main {
+main {
     width: 70%;
     padding: 0 15%;
 }
 
-.section {
+section {
     padding: 0 0 100px 0;
+
+    h1 {
+        padding: 0 0 20px;
+
+        font-size: 4em;
+    }
+
+    h2 {
+        padding: 0 0 .2em 0;
+
+        font-size: 2em;
+    }
+
+    p,
+    ul {
+        padding: 0 0 2em 0;
+
+        font-size: 2em;
+        font-weight: 100;
+        line-height: 2em;
+    }
 }
 
-.section-title {
-    padding: 0 0 20px;
-
-    font-size: 4em;
-}
-
-.section-content p,
-.section-content ul {
-    padding: 0 0 2em 0;
-    
-    font-size: 2em;
-    font-weight: 100;
-    line-height: 2em;
-}
 
 /* ==========================================================================
    Site footer.
@@ -213,29 +222,31 @@ ol {
 }
 
 @media screen and (max-width: 1024px) {
-    .main {
+    main {
         width: 80%;
         padding: 0 10%;
     }
-    .header {
+    .main-header {
         padding: 20 0 10px 0;
     }
-    .nav {
+    nav {
         padding: 0 0 100px 0;
     }
-    .section {
+    section {
         padding: 0 0 100px 0;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .header-title {
-        font-size: 4.5em;
+    .main-header {
+        h1 {
+            font-size: 4.5em;
+        }
     }
-    .nav {
+    nav {
         padding: 0 0 80px 0;
     }
-    .section {
+    section {
         padding: 0 0 80px 0;
     }
 }
@@ -244,21 +255,22 @@ ol {
     html {
         font-size: 9px;
     }
-    .main {
+    main {
         width: 90%;
         padding: 0 5%;
     }
-    .header {
+    .main-header {
         padding: 20px 0 10px 0;
     }
-    .nav {
+    nav {
         padding: 0 0 50px 0;
     }
-    .section {
+    section {
         padding: 0 0 50px 0;
-    }
-    .section-content p {
-        padding: 0 0 1em 0;
+
+        p {
+            padding: 0 0 1em 0;
+        }
     }
 }
 
@@ -266,23 +278,24 @@ ol {
     html {
         font-size: 7px;
     }
-    .header {
+    .main-header {
         padding: 10px 0;
+        h1 {
+            font-size: 3.5em;
+        }
     }
-    .header-title {
-        font-size: 3.5em;
-    }
-    .nav {
+    nav {
         padding: 0 0 30px 0;
+        li {
+            margin: 0 0 0 10px;
+        }
     }
-    .nav-item {
-        margin: 0 0 0 10px;
-    }
-    .section {
+    section {
         padding: 0 0 30px 0;
-    }
-    .section-title {
-        padding: 0 0 10px 0;
+
+        h1 {
+            padding: 0 0 10px 0;
+        }
     }
 }
 
