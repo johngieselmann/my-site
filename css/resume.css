@@ -28,6 +28,10 @@ ol {
     list-style-type:none;
 }
 
+li {
+    padding: .2em 0 0 0;
+}
+
 ::selection {
     background: #f67e69;
 }
@@ -37,6 +41,10 @@ html {
     color: #fff;
     font-family: "Lucida Console", Monaco, monospace;
     font-size: 10px;
+}
+
+div {
+    padding: .2em 0 0 0;
 }
 
 .clear {
