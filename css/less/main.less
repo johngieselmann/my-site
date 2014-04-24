@@ -22,7 +22,7 @@ html {
 }
 
 ::selection {
-    background: @redLight;
+    background: @primaryLight;
 }
 
 body {
@@ -36,7 +36,7 @@ a:visited,
 a:focus {
     text-decoration: none;
     cursor: pointer;
-    color: @red;
+    color: @primary;
 }
 
 a:hover {
@@ -44,8 +44,7 @@ a:hover {
 }
 
 a::selection {
-    background: @greyMed;
-    color: @white;
+    color: @greyLight;
 }
 
 ul,
@@ -63,6 +62,10 @@ ol {
 
 .hide {
     display: none;
+}
+
+.fa {
+    font-family: "FontAwesome";
 }
 
 /* ==========================================================================
@@ -158,21 +161,21 @@ section {
     padding: 0 0 50px 0;
 }
 
-.social-link {
+a.social-link {
     display: block;
     float: right;
-    width: 60px;
-    height: 60px;
-    margin: 0 10px 0 0;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 .2em 0 0;
 
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    background: @red center no-repeat;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: @primary center no-repeat;
     color: @white;
     text-align: center;
-    font-size: 2em;
-    line-height: 60px;
+    font-size: 4em;
+    line-height: 1.5em;
 
     -webkit-transition: background-color 300ms;
     transition: background-color 300ms;
@@ -180,20 +183,21 @@ section {
 
 .social-link:hover {
     background-color: @grey;
+    text-decoration: none;
 }
 
-.social-link.twitter {
-    background-image: url("../img/twitter_bird.png");
-}
-
-.social-link.linkedin {
-    background-position: 17px 14px;
-    background-image: url("../img/linkedin_in.png");
-}
-
-.social-link.github {
-    background-image: url("../img/github.png");
-}
+//.social-link.twitter {
+//    background-image: url("../img/twitter_bird.png");
+//}
+//
+//.social-link.linkedin {
+//    background-position: 17px 14px;
+//    background-image: url("../img/linkedin_in.png");
+//}
+//
+//.social-link.github {
+//    background-image: url("../img/github.png");
+//}
 
 /* ==========================================================================
    Good stuff.
