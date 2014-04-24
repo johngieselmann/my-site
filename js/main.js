@@ -12,9 +12,9 @@
 
         midLine: function() {
             return parseInt(wind.height() / 2);
-        }
+        },
 
-        ,changeColor: function() {
+        changeColor: function() {
             var midLine = scrolling.midLine();
 
             
@@ -22,20 +22,20 @@
     };
 
     var nav = {
-        items: null
+        items: null,
 
-        ,init: function() {
+        init: function() {
             nav.items = $(".js-nav");
             nav.items.on("click", nav.goTo);
-        }
+        },
         
-        ,goTo: function(e, el) {
+        goTo: function(e, el) {
             if (typeof el == "undefined") {
                 el = $(this);
             }
 
             var rel = el.attr("rel");
-            var section = $("." + rel + "-section");
+            var section = $(".js-" + rel + "-section");
             var top = section.offset().top;
 
             bod.animate({
