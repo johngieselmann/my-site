@@ -11,3 +11,8 @@ Disallow: /resume.php
 # Christmas stuff
 Disallow: /img/christmas/
 Disallow: /christmas.html
+
+# Testing
+Disallow: /dots-game/
+Disallow: /fletcher-and-roy/
+Disallow: /green-zone/
