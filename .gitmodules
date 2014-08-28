@@ -1,0 +1,6 @@
+[submodule "section-page-scroll"]
+	path = section-page-scroll
+	url = https://github.com/johngieselmann/section-page-scroll.git
+[submodule "survey-web-app"]
+	path = survey-web-app
+	url = https://github.com/johngieselmann/survey-web-app.git
