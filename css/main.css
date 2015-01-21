@@ -342,6 +342,15 @@ section.contact {
   display: block;
   vertical-align: top;
   line-height: 2em;
+  -webkit-transition: color 200ms ease-in;
+  -moz-transition: color 200ms ease-in;
+  -ms-transition: color 200ms ease-in;
+  -o-transition: color 200ms ease-in;
+  transition: color 200ms ease-in;
+  -webkit-backface-visibility: hidden;
+}
+.contact-list .contact-item a:hover {
+  color: #2fc381;
 }
 .contact-list .contact-item .fa {
   padding: 0 1rem 0 0;
