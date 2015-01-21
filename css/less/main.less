@@ -194,8 +194,8 @@ section {
    ========================================================================== */
 
 section.intro {
-    .gradient(@lightGreen, @green);
 //    .background(@green);
+    .gradient(@lightGreen, @green);
     .color(@white);
 
     h1 {
@@ -278,27 +278,71 @@ section.skills {
    ========================================================================== */
 section.job {
 
-    .background(@lime);
+//    .background(@lime);
 
-    hr {
-        border-color: @darkGrey;
+    .job-list {
+        padding: 3em 0 0 0;
+
+        .company {
+
+            padding: 0 0 2em 0;
+            text-align: center;
+
+            h3 {
+                padding: .2em 0;
+                font-size: 2em;
+                font-weight: @fontWeightBold;
+            }
+
+            p {
+                font-size: 1.6em;
+            }
+        }
+
+        .description {
+            h4 {
+                padding: .5em 0;
+
+                font-size: 1.6em;
+                font-weight: @fontWeightBold;
+            }
+
+            p {
+                font-size: 1.4em;
+                line-height: 1.4em;
+            }
+
+            ul {
+                padding: 1rem 2rem;
+
+                list-style-type: disc;
+                font-size: 1.4rem;
+
+                li {
+                    padding: .5rem 0;
+                }
+            }
+
+        }
     }
 
     .description {
-        padding: 3em 0 0 0;
-        line-height: 2em;
-
-        font-size: 1.4em;
-        text-align: justify;
 
         a {
             font-weight: @fontWeightBold;
             .color(@green);
         }
+
         a:hover {
             text-decoration: underline;
         }
     }
+}
+
+/* Examples
+   ========================================================================== */
+section.examples {
+    .background(@lightGrey);
 }
 
 /* Contact

@@ -259,17 +259,37 @@ section.skills {
 }
 /* Job
    ========================================================================== */
-section.job {
-  background: #d8df6f;
-}
-section.job hr {
-  border-color: #333333;
-}
-section.job .description {
+section.job .job-list {
   padding: 3em 0 0 0;
-  line-height: 2em;
+}
+section.job .job-list .company {
+  padding: 0 0 2em 0;
+  text-align: center;
+}
+section.job .job-list .company h3 {
+  padding: .2em 0;
+  font-size: 2em;
+  font-weight: 700;
+}
+section.job .job-list .company p {
+  font-size: 1.6em;
+}
+section.job .job-list .description h4 {
+  padding: .5em 0;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+section.job .job-list .description p {
   font-size: 1.4em;
-  text-align: justify;
+  line-height: 1.4em;
+}
+section.job .job-list .description ul {
+  padding: 1rem 2rem;
+  list-style-type: disc;
+  font-size: 1.4rem;
+}
+section.job .job-list .description ul li {
+  padding: .5rem 0;
 }
 section.job .description a {
   font-weight: 700;
@@ -277,6 +297,11 @@ section.job .description a {
 }
 section.job .description a:hover {
   text-decoration: underline;
+}
+/* Examples
+   ========================================================================== */
+section.examples {
+  background: #f1f0f1;
 }
 /* Contact
    ========================================================================== */
