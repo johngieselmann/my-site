@@ -28,7 +28,6 @@ a:visited,
 a:focus {
     text-decoration: none;
     cursor: pointer;
-    .color(@primary);
 }
 
 a:hover {
@@ -58,23 +57,38 @@ strong {
    ========================================================================== */
 header {
     position: fixed;
+    z-index: @navZ;
     top: 0;
     left: 0;
-    height: 3em;
+    height: 3rem;
     width: 100%;
 
     .background(@darkGrey);
     .color(@white);
+    .transition(transform, @navTransSpeed);
 
-    .fa {
-        position: absolute;
-        left: 0;
-        .transition(left, @navTransSpeed);
-    }
+    .menu {
+        display: block;
+        float: left;
+        height: 3rem;
+        line-height: 3rem;
 
-    .fa.nav-active {
-        left: @navWidth;
+        vertical-align: top;
+        text-align: center;
+        font-size: 1.2em;
+
+        .fa {
+            font-size: 2rem;
+            padding: .5rem;
+        }
     }
+    .menu:hover {
+        text-decoration: none;
+    }
+}
+
+header.nav-active {
+    .transform(translate3d(@navWidth, 0, 0));
 }
 
 /* ==========================================================================
@@ -83,27 +97,33 @@ header {
 
 nav {
     position: fixed;
+    z-index: @navZ;
     top: 0;
-    left: -100%;
-    bottom: 0;
+    left: -@navWidth;
     width: @navWidth;
     height: 100%;
 
     .background(@darkGrey);
     .color(@white);
-    .transition(left, @navTransSpeed);
+    .transition(transform, @navTransSpeed);
 }
 
 nav.nav-active {
-    left: 0;
+    .transform(translate3d(@navWidth, 0, 0));
 }
-
 
 /* ==========================================================================
    Main Content
    ========================================================================== */
 main {
     width: 100%;
+    padding: 3em 0 0 0;
+
+    .transition(transform, @navTransSpeed);
+}
+
+main.nav-active {
+    .transform(translate3d(@navWidth, 0, 0));
 }
 
 section {

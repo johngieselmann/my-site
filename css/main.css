@@ -29,7 +29,6 @@ a:visited,
 a:focus {
   text-decoration: none;
   cursor: pointer;
-  color: #1aa7d5;
 }
 a:hover {
   text-decoration: underline;
@@ -53,40 +52,94 @@ strong {
    ========================================================================== */
 header {
   position: fixed;
+  z-index: 9999;
   top: 0;
   left: 0;
-  height: 3em;
+  height: 3rem;
   width: 100%;
   background: #333333;
   color: #ffffff;
+  -webkit-transition: transform 200ms ease-in;
+  -moz-transition: transform 200ms ease-in;
+  -ms-transition: transform 200ms ease-in;
+  -o-transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in;
+  -webkit-backface-visibility: hidden;
+}
+header .menu {
+  display: block;
+  float: left;
+  height: 3rem;
+  line-height: 3rem;
+  vertical-align: top;
+  text-align: center;
+  font-size: 1.2em;
+}
+header .menu .fa {
+  font-size: 2rem;
+  padding: .5rem;
+}
+header .menu:hover {
+  text-decoration: none;
+}
+header.nav-active {
+  -webkit-transform: translate3d(200px, 0, 0);
+  -moz-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  -o-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 /* ==========================================================================
    Nav
    ========================================================================== */
 nav {
   position: fixed;
+  z-index: 9999;
   top: 0;
-  left: -100%;
-  bottom: 0;
-  width: 300px;
+  left: -200px;
+  width: 200px;
   height: 100%;
   background: #333333;
   color: #ffffff;
-  -webkit-transition: left 200ms ease-in;
-  -moz-transition: left 200ms ease-in;
-  -ms-transition: left 200ms ease-in;
-  -o-transition: left 200ms ease-in;
-  transition: left 200ms ease-in;
+  -webkit-transition: transform 200ms ease-in;
+  -moz-transition: transform 200ms ease-in;
+  -ms-transition: transform 200ms ease-in;
+  -o-transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in;
   -webkit-backface-visibility: hidden;
 }
 nav.nav-active {
-  left: 0;
+  -webkit-transform: translate3d(200px, 0, 0);
+  -moz-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  -o-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 /* ==========================================================================
    Main Content
    ========================================================================== */
 main {
   width: 100%;
+  padding: 3em 0 0 0;
+  -webkit-transition: transform 200ms ease-in;
+  -moz-transition: transform 200ms ease-in;
+  -ms-transition: transform 200ms ease-in;
+  -o-transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in;
+  -webkit-backface-visibility: hidden;
+}
+main.nav-active {
+  -webkit-transform: translate3d(200px, 0, 0);
+  -moz-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  -o-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 section {
   width: 96%;

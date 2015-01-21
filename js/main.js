@@ -1,22 +1,42 @@
 (function(window, document, $, undefined){
 
     var nav = {
-        items: null,
+        items : null,
 
         active : false,
 
-        init: function() {
-            nav.items = $(".js-nav");
-            nav.items.on("click", nav.goTo);
+        // nav elements
+        $moveEls : null,
+        $toggle  : null,
 
-            $(".js-toggle-nav").on("click", nav.toggle);
+        /**
+         * Initialize the navigation.
+         *
+         * @return void
+         */
+        init : function() {
+            nav.$moveEls = $(".js-nav-move");
+            nav.$toggle = $(".js-nav-toggle");
+
+//            nav.items = $(".js-nav");
+//            nav.items.on("click", nav.goTo);
+
+            nav.$toggle.on("click", nav.toggle);
         },
 
+        /**
+         * Toggle the nav menu state.
+         *
+         * @param obj e
+         * @return void
+         */
         toggle : function(e) {
             if (nav.active) {
-                $(".js-nav").removeClass("nav-active");
+                nav.$moveEls.removeClass("nav-active");
+                nav.active = false;
             } else {
-                $(".js-nav").addClass("nav-active");
+                nav.$moveEls.addClass("nav-active");
+                nav.active = true;
             }
         },
 
