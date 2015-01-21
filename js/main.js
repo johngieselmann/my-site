@@ -8,6 +8,7 @@
         // nav elements
         $moveEls : null,
         $toggle  : null,
+        $gotoEls : null,
 
         /**
          * Initialize the navigation.
@@ -17,44 +18,179 @@
         init : function() {
             nav.$moveEls = $(".js-nav-move");
             nav.$toggle = $(".js-nav-toggle");
-
-//            nav.items = $(".js-nav");
-//            nav.items.on("click", nav.goTo);
+            nav.$gotoEls = $(".js-nav-goto");
 
             nav.$toggle.on("click", nav.toggle);
+            nav.$gotoEls.on("click", nav.gotoSection);
         },
 
         /**
-         * Toggle the nav menu state.
+         * Toggle the nav menu state. We can also force the menu to inactive
+         * (hide it) by passing in true to the inactive param.
          *
          * @param obj e
+         * @param bool inactive
          * @return void
          */
-        toggle : function(e) {
-            if (nav.active) {
+        toggle : function(e, inactive) {
+            inactive = inactive || false;
+
+            if (nav.active || inactive === true) {
                 nav.$moveEls.removeClass("nav-active");
+                $(".js-overlay").removeClass("active");
                 nav.active = false;
             } else {
                 nav.$moveEls.addClass("nav-active");
+                $(".js-overlay").addClass("active");
                 nav.active = true;
             }
         },
 
-        goTo: function(e, el) {
-            if (typeof el == "undefined") {
-                el = $(this);
-            }
+        /**
+         * Go to a section of the site.
+         *
+         * @param obj e
+         * @param obj el
+         * @return void
+         */
+        gotoSection : function(e, el) {
+            var $el = el || $(this);
 
-            var rel = el.attr("rel");
-            var section = $(".js-" + rel + "-section");
-            var top = section.offset().top;
+            var rel = $el.attr("rel");
+            var $section = $("[data-section='" + rel + "']");
+            var top = $section.offset().top;
 
-            bod.animate({
-                scrollTop: top
-            });
+            // since we have to hide the nav menu, let that happen before
+            // we navigate to the section
+            setTimeout(function() {
+                $("body").animate({
+                    scrollTop : top
+                }, 300);
+            }, 250);
+
+            // hide the menu
+            nav.toggle(null, true);
         }
     };
-    nav.init();
+
+    /**
+     * The site singleton class.
+     */
+    var site = {
+
+        // some templates for using later
+//        temp : {
+//            $skillName : $("<div></div>").addClass("skill-name"),
+//            $skillVal  : $("<div></div>").addClass("skill-value"),
+//            $skillInd  : $("<span></span>").addClass("skill-indicator")
+//        },
+
+        /**
+         * Initialize the site.
+         *
+         * @return void
+         */
+        init : function() {
+            site.scale();
+            site.createSkillsList();
+
+            $(window).on("resize", site.scale);
+        },
+
+        /**
+         * Scale the site.
+         *
+         * @return void
+         */
+        scale : function() {
+            var $main = $("main");
+            $main.css({
+                "min-height" : $(window).outerHeight()
+            });
+        },
+
+        /**
+         * Create the list of skills from the skills object.
+         *
+         * @return void
+         */
+        createSkillsList : function() {
+            var $list = $(".js-skill-list");
+
+            for (var i in skills) {
+                var group = skills[i];
+                console.log(group);
+
+                // create a group for these skills
+                var $groupName = $("<h3></h3>")
+                    .text(i);
+                var $skillGroup = $("<div></div>")
+                    .addClass("skill-group")
+                    .append($groupName);
+
+
+                for (var name in group) {
+                    $skillGroup.append(site.createSkillItem(name, group[name]));
+                }
+
+                // add the group to the list
+                $list.append($skillGroup);
+            }
+        },
+
+        /**
+         * Create an item for the skill list.
+         *
+         * @param str name
+         * @param int value
+         * @return jquery
+         */
+        createSkillItem : function(name, value) {
+            // make sure the value is an integer
+            value = parseInt(value);
+
+            var $item = $("<div></div>")
+                .addClass("skill-item");
+
+            // add the name to the item
+            var $name = $("<div></div>")
+                .addClass("skill-name")
+                .text(name);
+            $item.append(name);
+
+            // create an indicator for each possible value
+            var maxVal = 5;
+            for (var i = 1; i <= maxVal; i++) {
+                var $ind = $("<div></div>")
+                    .addClass("skill-indicator");
+
+                // flag this indicator as having the value
+                if (i <= value) {
+                    $ind.addClass("active");
+                }
+
+                $item.append($ind);
+            }
+
+            return $item;
+        }
+    };
+
+    /**
+     * My skills as an object. The numbers should be my perceived skill level
+     * where 1 = minimal and 5 = max. These get rendered into the view via
+     * the site class so I don't have to write that HTML repeatedly.
+     */
+     //jam
+    var skills = {
+        "Dev" : {
+            "PHP" : 5,
+            "HTML" : 5
+        },
+        "Other" : {
+            "Nunchucks" : 2
+        }
+    };
 
     //easter has come early (unless it's actually easter)
     //in that case, it's right on time.
@@ -121,6 +257,11 @@
             }
         }, true);
     }
+
+    $(document).ready(function() {
+        nav.init();
+        site.init();
+    });
 
 
 })(window, document, $, undefined);

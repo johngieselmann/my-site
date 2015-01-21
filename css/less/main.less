@@ -11,13 +11,15 @@ html {
     font-size: 10px;
     font-family: @sansSerif;
     font-weight: @fontWeightLight;
+    overflow-x: hidden;
 }
 
 ::selection {
-    background: @primaryLight;
+    background: @blueLight;
 }
 
 body {
+    overflow-x: hidden;
     .background(@white);
     .color(@darkGrey);
 }
@@ -26,12 +28,10 @@ a,
 a:hover,
 a:visited,
 a:focus {
+    outline: none;
     text-decoration: none;
     cursor: pointer;
-}
-
-a:hover {
-    text-decoration: underline;
+    color: inherit;
 }
 
 img {
@@ -52,6 +52,12 @@ strong {
     font-weight: @fontWeightBold;
 }
 
+.content {
+    width: 96%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -60,10 +66,10 @@ header {
     z-index: @navZ;
     top: 0;
     left: 0;
-    height: 3rem;
+    height: 3em;
     width: 100%;
 
-    .background(@darkGrey);
+    .background(@black);
     .color(@white);
     .transition(transform, @navTransSpeed);
 
@@ -81,9 +87,6 @@ header {
             font-size: 2rem;
             padding: .5rem;
         }
-    }
-    .menu:hover {
-        text-decoration: none;
     }
 }
 
@@ -103,9 +106,27 @@ nav {
     width: @navWidth;
     height: 100%;
 
-    .background(@darkGrey);
+    .background(@black);
     .color(@white);
     .transition(transform, @navTransSpeed);
+
+    ul {
+        padding: 3em 0 0 0;
+
+        li {
+            font-size: 1.5rem;
+
+            a {
+                display: block;
+                padding: .8rem;
+            }
+
+            a:hover {
+                .color(@darkGrey);
+                .background(@lightGrey);
+            }
+        }
+    }
 }
 
 nav.nav-active {
@@ -116,6 +137,7 @@ nav.nav-active {
    Main Content
    ========================================================================== */
 main {
+    overflow-x: hidden;
     width: 100%;
     padding: 3em 0 0 0;
 
@@ -127,23 +149,27 @@ main.nav-active {
 }
 
 section {
-    width: 96%;
-    padding: 8em 2%;
+    padding: 8em 0;
 
     h1 {
-        padding: 0 0 1em 0;
-
         font-size: 4em;
         text-align: center;
     }
 
-    p {
-        font-size: 1.4rem;
-        line-height: 2rem;
+    hr {
+        width: 300px;
+        margin: 1em auto;
+        border-color: @medGrey;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 1.4em;
+        line-height: 2em;
     }
 }
 
-/* Top Section
+/* Intro Section
    ========================================================================== */
 
 section.intro {
@@ -152,55 +178,144 @@ section.intro {
     .color(@white);
 
     h1 {
-        padding: 0;
         font-weight: @fontWeightBold;
         text-transform: lowercase;
-
     }
 
     hr {
         border-color: @white;
-        width: 80%;
-        margin: 1em auto;
     }
 
     p {
         text-align: center;
     }
+}
 
-    ::selection {
-//        .color(@white);
-//        .background(@black);
+/* Profile
+   ========================================================================== */
+section.profile {
+
+    .profile-image {
+        padding: 3em 0 0 0;
+        text-align: center;
+    }
+
+}
+
+/* Skills Section
+   ========================================================================== */
+section.skills {
+    .background(@lightGrey);
+}
+
+.skill-list {
+    padding: 3em 0 0 0;
+
+    h3 {
+        margin: 0 0 .5em 0;
+        padding: 1em 0 .5em 0;
+        font-size: 1.6em;
+        border-bottom: 1px solid @medGrey;
+    }
+
+    .skill-group {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .skill-item {
+        padding: 0 0 .5em 0;
+        font-size: 1.2em;
+    }
+
+    .skill-indicator {
+        float: right;
+        width: 1.2em;
+        height: 1.2em;
+        margin: 0 .2em;
+        .background(@grey);
+        .circle();
+    }
+
+    .skill-indicator.active {
+        .background(@darkGrey);
+        .background(@green);
     }
 }
 
-/* ==========================================================================
-   Site footer.
+/* Job
    ========================================================================== */
-.footer {
-    padding: 0 0 50px 0;
+section.job {
+
+    .background(@lime);
+
+    hr {
+        border-color: @darkGrey;
+    }
+
+    .description {
+        padding: 3em 0 0 0;
+        line-height: 2em;
+
+        font-size: 1.4em;
+        text-align: justify;
+
+        a {
+            font-weight: @fontWeightBold;
+            .color(@green);
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
-a.social-link {
-    display: block;
-    float: right;
-    width: 1.5em;
-    height: 1.5em;
-    margin: 0 .2em 0 0;
-
-    background: @primary center no-repeat;
-    text-align: center;
-    font-size: 4em;
-    line-height: 1.5em;
-
-    .transition(background-color);
-    .circle();
+/* Contact
+   ========================================================================== */
+section.contact {
+    .background(@darkGrey);
     .color(@white);
 }
 
-.social-link:hover {
-    background-color: @darkGrey;
-    text-decoration: none;
+.contact-list {
+    width: 30rem;
+    margin: 0 auto;
+    padding: 3em 0 0 0;
+
+    .contact-item {
+        padding: 0 0 1em 0;
+        font-size: 1.4em;
+
+        a {
+            display: block;
+            vertical-align: top;
+            line-height: 2em;
+        }
+
+        .fa {
+            padding: 0 1rem 0 0;
+            font-size: 3rem;
+        }
+    }
+}
+
+/* Overlay
+   ========================================================================== */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .background(@black);
+    .opacity(50);
+}
+
+.overlay.active {
+    display: block;
 }
 
 /* ==========================================================================
@@ -232,8 +347,61 @@ a.social-link {
 /* ==========================================================================
    Media Queries for Responsiveness
    ========================================================================== */
-@media screen and (min-width: 300px) {
-    
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 11px;
+    }
+
+    .content {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .content {
+        width: 85%;
+    }
+
+    section {
+        padding: 9em 0;
+    }
+
+    .contact-list {
+        width: 64rem;
+
+        .contact-item {
+            float: left;
+            width: 30rem;
+            margin: 0 1rem;
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 13px;
+    }
+
+    .skill-list {
+        .skill-group {
+            float: left;
+            margin: 0 45px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    html {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 12em 0;
+    }
 }
 
 /**

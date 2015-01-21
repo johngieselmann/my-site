@@ -45,56 +45,108 @@
     </header>
 
     <nav class="js-nav-move">
+        <ul>
+            <li><a class="js-nav-goto" rel="intro">Top</a></li>
+            <li><a class="js-nav-goto" rel="profile">Profile</a></li>
+            <li><a class="js-nav-goto" rel="skills">Skills</a></li>
+            <li><a class="js-nav-goto" rel="job">My Job</a></li>
+            <li><a class="js-nav-goto" rel="examples">Examples</a></li>
+            <li><a class="js-nav-goto" rel="contact">Contact Me</a></li>
+        </ul>
     </nav>
 
     <main class="js-nav-move">
 
-        <section class="intro">
-            <h1>John Gieselmann</h1>
-            <hr></hr>
-            <p>Developer by day, and by night too I suppose.</p>
+        <section class="intro" data-section="intro">
+            <div class="content">
+                <h1>John Gieselmann</h1>
+                <hr>
+                <h2>Developer by day... developer by night as well.</h2>
+            </div><!-- /.content -->
+        </section><!-- /.intro -->
+
+        <section class="profile" data-section="profile">
+            <div class="content">
+                <h1>Me in a Nutshell</h1>
+                <hr>
+                <h2><em>Who am I? &nbsp;&hellip;&nbsp; I guess I have a lot of things to ponder.</em> <br>- Derek Zoolander</h2>
+
+                <div class="profile-image">
+                    <img src="img/profile.png" alt="John G">
+                </div>
+
+            </div><!-- /.content -->
+        </section><!-- /.profile -->
+
+        <section class="skills" data-section="skills">
+            <div class="content">
+                <h1>Skills</h1>
+                <hr>
+                <h2>Skills that pay the bills.</h2>
+
+                <div class="skill-list js-skill-list clearfix"></div><!-- /.skill-list -->
+            </div><!-- /.content -->
         </section>
 
-        <section class="js-about-section">
-            <h1>The Man.</h1>
-            <p>
-                I currently reside in the Greater Denver area where I am living the dream with my wife. Disobeying Aristotle's law of non-contradiction, I am a nerd who loves to stay active, and I am always looking for the next great adventure. I stay active by breaking things, fixing things, working out, repairing my car and wakeboarding, when given the opportunity. Many of our friends, and even family, seem to be (who can really trust facebook) having babies lately. So, as to not feel left out, we have adopted a 1977 K5 Blazer a.k.a. <em>The Jolly Wagon</em>.
-            </p>
+        <section class="job" data-section="job">
+            <div class="content">
+                <h1>My Job</h1>
+                <hr>
+                <h2>It's what I do for money.</h2>
+
+                <p class="description">
+                    I work for <a href="http://www.peopleproductions.com" target="_blank">People Productions</a> developing <a href="http://www.upsync.com" target="_blank">UpSync</a> and other web applications as well as assisting with project scoping. I would consider myself a "full-stack" developer since most of my projects involve: PHP, MySQL, JavaScript, CSS and HTML. After being thrown into the lion's den, I have been picking up sys-admin and server configuration as well. Lately, I have been playing with Chef and even breaking free of the traditional LAMP stack in favor of Nginx. Thanks to vim, it has been over 6 months since my last GUI text edit.
+                </p>
+            </div><!-- /.content -->
         </section>
 
-        <section class="js-work-section">
-            <h1>The Work.</h1>
-            <p>
-                I work for <a href="http://www.peopleproductions.com" target="_blank">People Productions</a> developing <a href="http://www.upsync.com" target="_blank">UpSync</a> and other web applications as well as assisting with project scoping. I would consider myself a "full-stack" developer since most of my projects involve: PHP, MySQL, JavaScript, CSS and HTML. After being thrown into the lion's den, I have been picking up sys-admin and server configuration as well. Lately, I have been playing with Chef and even breaking free of the traditional LAMP stack in favor of Nginx. Thanks to vim, it has been over 6 months since my last GUI text edit.
-            </p>
-        </section>
-        <section class="js-example-section">
-            <h1>The Examples.</h1>
+        <section class="examples" data-section="examples">
+            <div class="content">
+                <h1>Work Examples</h1>
+                <hr>
+                <h2>Just some boring crap I've done.</h2>
 
-            <h2><a href="http://johngieselmann.com/section-page-scroll" target="_blank">Section Page Scroll</a></h2>
-            <p>
-                This is a nifty little website scroller that will create page like sections that slide up/down on scroll and/or arrow key press as if moving between pages. <a href="https://github.com/johngieselmann/section-page-scroll" target="_blank">Github</a>
-            </p>
+                <h2><a href="http://johngieselmann.com/section-page-scroll" target="_blank">Section Page Scroll</a></h2>
+                <p>
+                    This is a nifty little website scroller that will create page like sections that slide up/down on scroll and/or arrow key press as if moving between pages. <a href="https://github.com/johngieselmann/section-page-scroll" target="_blank">Github</a>
+                </p>
 
-            <h2><a href="https://github.com/johngieselmann/simple-twitter-connector" target="_blank">Simple Twitter Connector</a></h2>
-            <p>
-                This plugin pulls tweets, stores them in a database, then builds the tweet object into an HTML string via JavaScript. <a href="https://github.com/johngieselmann/simple-twitter-connector" target="_blank">Github</a>
-            </p>
+                <h2><a href="https://github.com/johngieselmann/simple-twitter-connector" target="_blank">Simple Twitter Connector</a></h2>
+                <p>
+                    This plugin pulls tweets, stores them in a database, then builds the tweet object into an HTML string via JavaScript. <a href="https://github.com/johngieselmann/simple-twitter-connector" target="_blank">Github</a>
+                </p>
 
-            <h2><a href="http://johngieselmann.com/survey-web-app" target="_blank">Survey Web App</a></h2>
-            <p>
-                This is a little web app that you can use to add a survey to your own website for simple data gathering. <a href="https://github.com/johngieselmann/survey-web-app" target="_blank">Github</a>
-            </p>
+                <h2><a href="http://johngieselmann.com/survey-web-app" target="_blank">Survey Web App</a></h2>
+                <p>
+                    This is a little web app that you can use to add a survey to your own website for simple data gathering. <a href="https://github.com/johngieselmann/survey-web-app" target="_blank">Github</a>
+                </p>
+            </div><!-- /.content -->
         </section>
 
-        <footer class="footer">
-            <div class="social">
-                <a class="social-link fa fa-twitter" href="http://twitter.com/johngieselmann" target="_blank"></a>
-                <a class="social-link fa fa-github" href="http://github.com/johngieselmann" target="_blank"></a>
-                <a class="social-link fa fa-linkedin" href="http://linkedin.com/in/johngieselmann" target="_blank"></a>
-                <div class="clear"></div>
+        <section class="contact" data-section="contact">
+            <div class="content">
+                <h1>Contact</h1>
+                <hr>
+                <h2>Call me maybe.</h2>
+
+                <div class="contact-list clearfix">
+                    <div class="contact-item">
+                        <a href="https://twitter.com/johngieselmann" target="_blank"><span class="fa fa-twitter-square"></span>https://twitter.com/johngieselmann</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://github.com/johngieselmann" target="_blank"><span class="fa fa-github-square"></span>https://github.com/johngieselmann</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="https://linkedin.com/in/johngieselmann" target="_blank"><span class="fa fa-linkedin-square"></span>https://linkedin.com/in/johngieselmann</a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="mailto:john.gieselmann@gmail.com&subject=Howdy%20Partner"><span class="fa fa-envelope"></span>john.gieselmann@gmail.com</a>
+                    </div>
+                </div><!-- /.contact-list -->
             </div>
-        </footer>
+        </section>
+
+        <div class="overlay js-overlay"></div>
     </main>
     <div class="eggs js-eggs">
         <div class="eggs-scorpion js-scorpion slidebottom">
