@@ -214,12 +214,26 @@ section.intro p {
 }
 /* Profile
    ========================================================================== */
-section.profile .profile-info {
-  padding: 3em 0 0 0;
+.profile-info {
+  padding: 5em 0 0 0;
 }
-section.profile .profile-info .profile-image {
+.profile-info .profile-image {
   padding: 0 0 2em 0;
   text-align: center;
+}
+.profile-info .profile-items {
+  text-align: center;
+}
+.profile-info .profile-items h3 {
+  font-size: 1.4em;
+  font-weight: 700;
+}
+.profile-info .profile-items ul {
+  font-size: 1.4rem;
+  padding: .5rem 0 1rem 0;
+}
+.profile-info .profile-items ul li {
+  padding: 0 0 .4rem 0;
 }
 /* Skills Section
    ========================================================================== */
@@ -227,22 +241,24 @@ section.skills {
   background: #f1f0f1;
 }
 .skill-list {
-  padding: 3em 0 0 0;
-}
-.skill-list h3 {
-  margin: 0 0 .5em 0;
-  padding: 1em 0 .5em 0;
-  font-size: 1.6em;
-  border-bottom: 1px solid #cccccc;
+  padding: 5em 0 0 0;
 }
 .skill-list .skill-group {
   padding: 0 0 2em 0;
+  font-size: 1.3em;
+}
+.skill-list h3 {
+  height: 2em;
+  line-height: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  background: #cccccc;
 }
 .skill-list .skill-item {
   height: 2em;
   line-height: 2em;
   padding: 0 .2em;
-  font-size: 1.3em;
 }
 .skill-list .skill-item:hover {
   background: #ffffff;
@@ -263,7 +279,7 @@ section.skills {
 /* Job
    ========================================================================== */
 section.job .job-list {
-  padding: 3em 0 0 0;
+  padding: 5em 0 0 0;
 }
 section.job .job-list .job-group {
   margin: 0 auto;
@@ -316,7 +332,7 @@ section.contact {
   color: #ffffff;
 }
 .contact-list {
-  padding: 3em 0 0 0;
+  padding: 5em 0 0 0;
 }
 .contact-list .contact-item {
   padding: .5em 3.5em;
@@ -405,6 +421,9 @@ section.contact {
     float: left;
     width: 28rem;
     margin: 0 1.75rem;
+  }
+  .profile-info .profile-items {
+    text-align: left;
   }
   .contact-list .contact-item {
     padding: .5em 0;

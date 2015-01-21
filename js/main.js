@@ -206,7 +206,9 @@
             "Angular.js"  : 4,
             "LESS"        : 3,
             "Objective-C" : 2,
-            "Swift"       : 2
+            "Swift"       : 2,
+            "Backbone.js" : 2,
+            "Ruby"        : 1
         },
         "Server" : {
             "Apache"  : 3,
