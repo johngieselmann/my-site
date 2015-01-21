@@ -1,31 +1,25 @@
 (function(window, document, $, undefined){
 
-    var wind = $(window);
-    var doc = $(document);
-    var bod = $('body');
-
-    //adjust some things while scrolling
-    var scrolling = {
-
-        midLine: function() {
-            return parseInt(wind.height() / 2);
-        },
-
-        changeColor: function() {
-            var midLine = scrolling.midLine();
-
-            
-        }
-    };
-
     var nav = {
         items: null,
+
+        active : false,
 
         init: function() {
             nav.items = $(".js-nav");
             nav.items.on("click", nav.goTo);
+
+            $(".js-toggle-nav").on("click", nav.toggle);
         },
-        
+
+        toggle : function(e) {
+            if (nav.active) {
+                $(".js-nav").removeClass("nav-active");
+            } else {
+                $(".js-nav").addClass("nav-active");
+            }
+        },
+
         goTo: function(e, el) {
             if (typeof el == "undefined") {
                 el = $(this);

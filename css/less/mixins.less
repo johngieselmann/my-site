@@ -11,10 +11,15 @@
     -webkit-backface-visibility: @backface;
 }
 
-.transform(@transform) {
+.transform(@transform, @backface: hidden) {
     -webkit-transform: @transform;
-    -mz-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
     transform: @transform;
+
+    -webkit-backface-visibility: @backface;
+    backface-visibility: @backface;
 }
 
 .twoStageAnim(@prop, @1, @2) {

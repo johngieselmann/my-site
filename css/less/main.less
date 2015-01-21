@@ -54,14 +54,48 @@ strong {
 }
 
 /* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3em;
+    width: 100%;
+
+    .background(@darkGrey);
+    .color(@white);
+
+    .fa {
+        position: absolute;
+        left: 0;
+        .transition(left, @navTransSpeed);
+    }
+
+    .fa.nav-active {
+        left: @navWidth;
+    }
+}
+
+/* ==========================================================================
    Nav
    ========================================================================== */
 
 nav {
     position: fixed;
     top: 0;
-    right: 0;
-    padding: .5em 0;
+    left: -100%;
+    bottom: 0;
+    width: @navWidth;
+    height: 100%;
+
+    .background(@darkGrey);
+    .color(@white);
+    .transition(left, @navTransSpeed);
+}
+
+nav.nav-active {
+    left: 0;
 }
 
 
@@ -93,7 +127,8 @@ section {
    ========================================================================== */
 
 section.intro {
-    .background(@green);
+    .gradient(@lightGreen, @green);
+//    .background(@green);
     .color(@white);
 
     h1 {
@@ -107,7 +142,6 @@ section.intro {
         border-color: @white;
         width: 80%;
         margin: 1em auto;
-        .opacity(50);
     }
 
     p {

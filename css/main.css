@@ -49,13 +49,38 @@ strong {
   font-weight: 700;
 }
 /* ==========================================================================
+   Header
+   ========================================================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3em;
+  width: 100%;
+  background: #333333;
+  color: #ffffff;
+}
+/* ==========================================================================
    Nav
    ========================================================================== */
 nav {
   position: fixed;
   top: 0;
-  right: 0;
-  padding: .5em 0;
+  left: -100%;
+  bottom: 0;
+  width: 300px;
+  height: 100%;
+  background: #333333;
+  color: #ffffff;
+  -webkit-transition: left 200ms ease-in;
+  -moz-transition: left 200ms ease-in;
+  -ms-transition: left 200ms ease-in;
+  -o-transition: left 200ms ease-in;
+  transition: left 200ms ease-in;
+  -webkit-backface-visibility: hidden;
+}
+nav.nav-active {
+  left: 0;
 }
 /* ==========================================================================
    Main Content
@@ -79,7 +104,14 @@ section p {
 /* Top Section
    ========================================================================== */
 section.intro {
-  background: #2fc381;
+  background: #68e1a9;
+  background: -moz-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #68e1a9), color-stop(100%, #2fc381));
+  background: -webkit-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
+  background: -o-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
+  background: -ms-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
+  background: linear-gradient(to bottom, #68e1a9 0%, #2fc381 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@top', endColorstr='@bottom', GradientType=0);
   color: #ffffff;
 }
 section.intro h1 {
@@ -91,8 +123,6 @@ section.intro hr {
   border-color: #ffffff;
   width: 80%;
   margin: 1em auto;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 section.intro p {
   text-align: center;
