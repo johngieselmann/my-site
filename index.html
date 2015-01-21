@@ -10,7 +10,8 @@
     <meta name="description" content="Hello, my name is John and I like to party. Also, I am a full-stack web developer and budding iOS developer for People Productions in Boulder, CO.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="http://johngieselmann.com/favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
     <!-- For third-generation iPad with high-resolution Retina display: -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
     <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
@@ -21,17 +22,14 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
-    
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/animations.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-
-    <!-- LESS CSS Pre-processor -->
-    <link rel="stylesheet/less" type="text/css" href="css/less/main.less">
-    <script type="text/javascript" src="js/vendor/less.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <script type="text/javascript" src="js/vendor/modernizr-2.7.0.min.js"></script>
-    <script type="text/javascript" src="js/util.js"></script>
 
     <!--
         CREDITS:
@@ -44,27 +42,14 @@
 
     <main>
 
-        <header class="main-header">
-            <figure class="profile">
-                <img src="img/profile.png" alt="John Gieselmann" />
-            </figure>
-            <h1>John Gieselmann</h1>
-        </header>
-
         <nav>
-            <ul>
-                <li>
-                    <a href="resume.html" target="_blank">The R&eacute;sum&eacute;</a>
-                </li>
-                <li>
-                    <a class="js-nav" rel="work">The Work</a>
-                </li>
-                <li>
-                    <a class="js-nav" rel="about">The Man</a>
-                </li>
-                <li class="clear"></li>
-            </ul>
         </nav>
+
+        <section class="intro">
+            <h1>John Gieselmann</h1>
+            <hr></hr>
+            <p>Developer by day, and by night too I suppose.</p>
+        </section>
 
         <section class="js-about-section">
             <h1>The Man.</h1>
@@ -117,8 +102,8 @@
     </div>
 
     <!-- JavaScript files -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 

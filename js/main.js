@@ -1,6 +1,3 @@
-/**
- * Self executing function on page load.
- */
 (function(window, document, $, undefined){
 
     var wind = $(window);

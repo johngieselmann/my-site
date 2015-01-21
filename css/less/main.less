@@ -1,16 +1,7 @@
 // LESS Main Stylsheet
 @import "colors";
-
-// Set up some simple font defaults
-@sansSerif: Helvetica, Arial, Verdana, sans-serif;
-@serif: Georgia, Palatino, serif;
-
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-
-/* Sub-section comment block
-   ========================================================================== */
+@import "mixins";
+@import "variables";
 
 /* ==========================================================================
    General site styles
@@ -19,6 +10,7 @@
 html {
     font-size: 10px;
     font-family: @sansSerif;
+    font-weight: @fontWeightLight;
 }
 
 ::selection {
@@ -26,8 +18,8 @@ html {
 }
 
 body {
-    background: @white;
-    color: @grey;
+    .background(@white);
+    .color(@darkGrey);
 }
 
 a,
@@ -36,15 +28,16 @@ a:visited,
 a:focus {
     text-decoration: none;
     cursor: pointer;
-    color: @primary;
+    .color(@primary);
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-a::selection {
-    color: @greyLight;
+img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 ul,
@@ -57,110 +50,75 @@ em {
 }
 
 strong {
-    font-weight: bold;
-}
-
-.clear {
-    clear: both;
-}
-
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
-}
-
-.fa {
-    font-family: "FontAwesome";
+    font-weight: @fontWeightBold;
 }
 
 /* ==========================================================================
-   Site header.
-   ========================================================================== */
-
-.profile {
-    float: left;
-    width: 20%;
-}
-
-.profile img {
-    width: 100%;
-    max-width: 300px;
-
-    border-radius: 500px;
-}
-
-.main-header {
-    padding: 20px 0 10px 0;
-
-    h1 {
-        float: left;
-        width: 80%;
-
-        font-size: 5em;
-        text-align: right;
-    }
-}
-
-
-/* ==========================================================================
-   Site navigation.
+   Nav
    ========================================================================== */
 
 nav {
-    padding: 0 0 50px 0;
-
-    li:not(.clear) {
-        float: right;
-        margin: 0 5px 0 20px;
-
-        a {
-            font-size: 2em;
-            font-weight: 100;
-            -webkit-transition: text-decoration 300ms;
-            -moz-transition: text-decoration 300ms;
-            -o-transition: text-decoration 300ms;
-            transition: text-decoration 300ms;
-        }
-    }
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: .5em 0;
 }
 
 
 /* ==========================================================================
-   Site main content.
+   Main Content
    ========================================================================== */
 main {
-    width: 70%;
-    padding: 0 15%;
+    width: 100%;
 }
 
 section {
-    padding: 0 0 100px 0;
+    width: 96%;
+    padding: 8em 2%;
 
     h1 {
-        padding: 0 0 20px;
+        padding: 0 0 1em 0;
 
         font-size: 4em;
+        text-align: center;
     }
 
-    h2 {
-        padding: 0 0 .2em 0;
-
-        font-size: 2em;
-    }
-
-    p,
-    ul {
-        padding: 0 0 2em 0;
-
-        font-size: 2em;
-        font-weight: 100;
-        line-height: 2em;
+    p {
+        font-size: 1.4rem;
+        line-height: 2rem;
     }
 }
 
+/* Top Section
+   ========================================================================== */
+
+section.intro {
+    .background(@green);
+    .color(@white);
+
+    h1 {
+        padding: 0;
+        font-weight: @fontWeightBold;
+        text-transform: lowercase;
+
+    }
+
+    hr {
+        border-color: @white;
+        width: 80%;
+        margin: 1em auto;
+        .opacity(50);
+    }
+
+    p {
+        text-align: center;
+    }
+
+    ::selection {
+//        .color(@white);
+//        .background(@black);
+    }
+}
 
 /* ==========================================================================
    Site footer.
@@ -176,36 +134,20 @@ a.social-link {
     height: 1.5em;
     margin: 0 .2em 0 0;
 
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
     background: @primary center no-repeat;
-    color: @white;
     text-align: center;
     font-size: 4em;
     line-height: 1.5em;
 
-    -webkit-transition: background-color 300ms;
-    transition: background-color 300ms;
+    .transition(background-color);
+    .circle();
+    .color(@white);
 }
 
 .social-link:hover {
-    background-color: @grey;
+    background-color: @darkGrey;
     text-decoration: none;
 }
-
-//.social-link.twitter {
-//    background-image: url("../img/twitter_bird.png");
-//}
-//
-//.social-link.linkedin {
-//    background-position: 17px 14px;
-//    background-image: url("../img/linkedin_in.png");
-//}
-//
-//.social-link.github {
-//    background-image: url("../img/github.png");
-//}
 
 /* ==========================================================================
    Good stuff.
@@ -224,7 +166,7 @@ a.social-link {
 
     font-size: 4em;
     font-style: italic;
-    font-weight: bold;
+    font-weight: @fontWeightBold;
 }
 
 .eggs-scorpion img {
@@ -233,82 +175,11 @@ a.social-link {
     max-height: 450px;
 }
 
-@media screen and (max-width: 1024px) {
-    main {
-        width: 80%;
-        padding: 0 10%;
-    }
-    .main-header {
-        padding: 20 0 10px 0;
-    }
-    nav {
-        padding: 0 0 100px 0;
-    }
-    section {
-        padding: 0 0 100px 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .main-header {
-        h1 {
-            font-size: 4.5em;
-        }
-    }
-    nav {
-        padding: 0 0 80px 0;
-    }
-    section {
-        padding: 0 0 80px 0;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    html {
-        font-size: 9px;
-    }
-    main {
-        width: 90%;
-        padding: 0 5%;
-    }
-    .main-header {
-        padding: 20px 0 10px 0;
-    }
-    nav {
-        padding: 0 0 50px 0;
-    }
-    section {
-        padding: 0 0 50px 0;
-
-        p {
-            padding: 0 0 1em 0;
-        }
-    }
-}
-
-@media screen and (max-width: 480px) {
-    html {
-        font-size: 7px;
-    }
-    .main-header {
-        padding: 10px 0;
-        h1 {
-            font-size: 3.5em;
-        }
-    }
-    nav {
-        padding: 0 0 30px 0;
-        li {
-            margin: 0 0 0 10px;
-        }
-    }
-    section {
-        padding: 0 0 30px 0;
-
-        h1 {
-            padding: 0 0 10px 0;
-        }
-    }
+/* ==========================================================================
+   Media Queries for Responsiveness
+   ========================================================================== */
+@media screen and (min-width: 300px) {
+    
 }
 
 /**
