@@ -50,7 +50,9 @@
             <li><a class="js-nav-goto" rel="profile">Profile</a></li>
             <li><a class="js-nav-goto" rel="skills">Skills</a></li>
             <li><a class="js-nav-goto" rel="job">My Job</a></li>
+            <!--
             <li><a class="js-nav-goto" rel="examples">Examples</a></li>
+            -->
             <li><a class="js-nav-goto" rel="contact">Contact Me</a></li>
         </ul>
     </nav>
@@ -71,10 +73,14 @@
                 <hr>
                 <h2><em>Who am I? &nbsp;&hellip;&nbsp; I guess I have a lot of things to ponder.</em> <br>- Derek Zoolander</h2>
 
-                <div class="profile-image">
-                    <img src="img/profile.png" alt="John G">
+                <div class="profile-info column-flex">
+                    <div class="profile-image column-item">
+                        <img src="img/profile.png" alt="John G">
+                    </div>
+                    <div class="profile-items column-item">
+                        <p>Damn yeah.</p>
+                    </div>
                 </div>
-
             </div><!-- /.content -->
         </section><!-- /.profile -->
 
@@ -97,26 +103,26 @@
                 <div class="job-list">
                     <div class="job-group">
                         <div class="company">
-                            <h3><em>People Productions</em></h3>
-                            <p>Boulder, CO</p>
+                            <h3><a href="http://peopleproductions.com" target="_blank">People Productions</a></h3>
+                            <h4>Lead Developer: <em>August 2011 - Present</em></h4>
                         </div><!-- /.company -->
                         <div class="description">
-                            <h4>Lead Developer : <em>August 2011 - Present</em></h4>
-                            <p>People Productions is a web and video service company that specializes in content development. Working for a service company, I get my hands dirty with all different types of projects. Here are some of the highlights:</p>
+                            <p>
+                                People Productions is a web and video service company that specializes in content development. Working for a service company I get my hands dirty with different types of projects and clients, but our primary area of work is healthcare.
+                            </p>
                             <ul>
-                                <li><a href="http://www.upsync.com" target="_blank">UpSync</a> is a sales presentation tool that we offer as SaaS. When I started I helped build some of the features. Currently, I maintain the existing platform and am in the process of re-architecting the entire app to improve overall use. - PHP 5.2, Zend PHP, MySQL, JavaScript</li>
-                                <li>Doing more stuff</li>
+                                <li>Build and maintain web and iOS features for <a href="http://www.upsync.com" target="_blank">UpSync</a>, our sales presentation tool - CentOS, Apache, Zend PHP, MySQL, JavaScript</li>
+                                <li>Re-architect and re-build <a href="http://www.upsync.com" target="_blank">UpSync</a> to simplify and improve scalability - Ubuntu, Nginx, Laravel, MySQL, Angular.js, LESS</li>
+                                <li>Develop frontend, data driven web applications (product pricing, cost analysis) - JavaScript</li>
+                                <li>Develop responsive, device-agnostic web apps and interactive presentations - Angular.js, LESS</li>
                             </ul>
                         </div><!-- /.description -->
                     </div><!-- /.job-group -->
                 </div><!-- /.job-list -->
-
-                <p class="description">
-                    I work for <a href="http://www.peopleproductions.com" target="_blank">People Productions</a> developing <a href="http://www.upsync.com" target="_blank">UpSync</a> and other web applications as well as assisting with project scoping. I would consider myself a "full-stack" developer since most of my projects involve: PHP, MySQL, JavaScript, CSS and HTML. After being thrown into the lion's den, I have been picking up sys-admin and server configuration as well. Lately, I have been playing with Chef and even breaking free of the traditional LAMP stack in favor of Nginx. Thanks to vim, it has been over 6 months since my last GUI text edit.
-                </p>
             </div><!-- /.content -->
         </section>
 
+        <!--
         <section class="examples" data-section="examples">
             <div class="content">
                 <h1>Work Examples</h1>
@@ -139,6 +145,7 @@
                 </p>
             </div><!-- /.content -->
         </section>
+        -->
 
         <section class="contact" data-section="contact">
             <div class="content">

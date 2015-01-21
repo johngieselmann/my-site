@@ -195,11 +195,34 @@
      //jam
     var skills = {
         "Dev" : {
-            "PHP" : 5,
-            "HTML" : 5
+            "PHP"         : 5,
+            "HTML"        : 5,
+            "CSS"         : 5,
+            "Laravel"     : 4,
+            "Zend"        : 4,
+            "MySQL"       : 4,
+            "JavaScript"  : 4,
+            "jQuery"      : 4,
+            "Angular.js"  : 4,
+            "LESS"        : 3,
+            "Objective-C" : 2,
+            "Swift"       : 2
         },
-        "Other" : {
-            "Nunchucks" : 2
+        "Server" : {
+            "Apache"  : 3,
+            "Nginx"   : 3,
+            "Linux"   : 3,
+            "Chef"    : 3,
+            "Vagrant" : 3
+        },
+        "Tools" : {
+            "Vim"         : 5,
+            "Git"         : 5,
+            "Google Apps" : 5,
+            "Dropbox"     : 5,
+            "MS Office"   : 5,
+            "Xcode"       : 4,
+            "Adobe Suite" : 4
         }
     };
 

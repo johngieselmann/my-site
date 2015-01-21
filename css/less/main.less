@@ -53,7 +53,7 @@ strong {
 }
 
 .content {
-    width: 96%;
+    width: 94%;
     max-width: 1024px;
     margin: 0 auto;
 }
@@ -194,7 +194,7 @@ section {
    ========================================================================== */
 
 section.intro {
-//    .background(@green);
+//    .background(@primary);
     .gradient(@lightGreen, @green);
     .color(@white);
 
@@ -216,9 +216,17 @@ section.intro {
    ========================================================================== */
 section.profile {
 
-    .profile-image {
+    .profile-info {
         padding: 3em 0 0 0;
-        text-align: center;
+
+        .profile-image {
+            padding: 0 0 2em 0;
+            text-align: center;
+        }
+
+        .profile-items {
+
+        }
     }
 
 }
@@ -270,7 +278,7 @@ section.skills {
     }
 
     .skill-indicator.full {
-        .color(@green);
+        .color(@primary);
     }
 }
 
@@ -283,14 +291,25 @@ section.job {
     .job-list {
         padding: 3em 0 0 0;
 
-        .company {
+        .job-group {
+            margin: 0 auto;
+            max-width: 40rem;
+        }
 
-            padding: 0 0 2em 0;
-            text-align: center;
+        .company {
+            padding: 0 0 1em 0;
 
             h3 {
                 padding: .2em 0;
+
                 font-size: 2em;
+                font-weight: @fontWeightBold;
+
+                .color(@primary);
+            }
+
+            h4 {
+                font-size: 1.6em;
                 font-weight: @fontWeightBold;
             }
 
@@ -300,13 +319,6 @@ section.job {
         }
 
         .description {
-            h4 {
-                padding: .5em 0;
-
-                font-size: 1.6em;
-                font-weight: @fontWeightBold;
-            }
-
             p {
                 font-size: 1.4em;
                 line-height: 1.4em;
@@ -323,18 +335,15 @@ section.job {
                 }
             }
 
-        }
-    }
+            a {
+                font-weight: @fontWeightBold;
+                .color(@primary);
+            }
 
-    .description {
+            a:hover {
+                text-decoration: underline;
+            }
 
-        a {
-            font-weight: @fontWeightBold;
-            .color(@green);
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     }
 }
@@ -356,7 +365,7 @@ section.contact {
     padding: 3em 0 0 0;
 
     .contact-item {
-        padding: .5em 4em;
+        padding: .5em 3.5em;
         font-size: 1.4em;
 
         a {
