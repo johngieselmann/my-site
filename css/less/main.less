@@ -69,7 +69,7 @@ header {
     height: 3em;
     width: 100%;
 
-    .background(@black);
+    .background(@offBlack);
     .color(@white);
     .transition(transform, @navTransSpeed);
 
@@ -106,7 +106,7 @@ nav {
     width: @navWidth;
     height: 100%;
 
-    .background(@black);
+    .background(@offBlack);
     .color(@white);
     .transition(transform, @navTransSpeed);
 
@@ -167,7 +167,28 @@ section {
         font-size: 1.4em;
         line-height: 2em;
     }
+
 }
+
+.column-flex {
+    width: 40rem;
+    max-width: 100%;
+    margin: 0 auto;
+
+    .column-item {
+    }
+}
+
+.column-flex:before,
+.column-flex:after {
+    content: " ";
+    display: table;
+}
+
+.column-flex:after {
+    clear: both;
+}
+
 
 /* Intro Section
    ========================================================================== */
@@ -219,28 +240,37 @@ section.skills {
     }
 
     .skill-group {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
+        padding: 0 0 2em 0;
     }
 
     .skill-item {
-        padding: 0 0 .5em 0;
-        font-size: 1.2em;
+        height: 2em;
+        line-height: 2em;
+        padding: 0 .2em;
+
+        font-size: 1.3em;
+    }
+
+    .skill-item:hover {
+        .background(@white);
+    }
+
+    .skill-value {
+        float: right;
+        padding: .4em 0 0 0;
     }
 
     .skill-indicator {
         float: right;
-        width: 1.2em;
-        height: 1.2em;
-        margin: 0 .2em;
-        .background(@grey);
-        .circle();
+        padding: 0 0 0 .3em;
+
+        font-size: 1.2em;
+
+        .color(@grey);
     }
 
-    .skill-indicator.active {
-        .background(@darkGrey);
-        .background(@green);
+    .skill-indicator.full {
+        .color(@green);
     }
 }
 
@@ -279,12 +309,10 @@ section.contact {
 }
 
 .contact-list {
-    width: 30rem;
-    margin: 0 auto;
     padding: 3em 0 0 0;
 
     .contact-item {
-        padding: 0 0 1em 0;
+        padding: .5em 4em;
         font-size: 1.4em;
 
         a {
@@ -363,22 +391,13 @@ section.contact {
     }
 
     .content {
-        width: 85%;
+        width: 80%;
     }
 
     section {
         padding: 9em 0;
     }
 
-    .contact-list {
-        width: 64rem;
-
-        .contact-item {
-            float: left;
-            width: 30rem;
-            margin: 0 1rem;
-        }
-    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -386,10 +405,22 @@ section.contact {
         font-size: 13px;
     }
 
-    .skill-list {
-        .skill-group {
+    /* Here we break up our columms */
+    .column-flex {
+        width: 63rem;
+        max-width: 100%;
+        margin: 0 auto;
+
+        .column-item {
             float: left;
-            margin: 0 45px;
+            width: 28rem;
+            margin: 0 1.75rem;
+        }
+    }
+
+    .contact-list {
+        .contact-item {
+            padding: .5em 0;
         }
     }
 }

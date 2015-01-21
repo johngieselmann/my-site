@@ -119,16 +119,16 @@
 
             for (var i in skills) {
                 var group = skills[i];
-                console.log(group);
 
                 // create a group for these skills
                 var $groupName = $("<h3></h3>")
                     .text(i);
                 var $skillGroup = $("<div></div>")
                     .addClass("skill-group")
+                    .addClass("column-item")
                     .append($groupName);
 
-
+                // create all the line items for this group
                 for (var name in group) {
                     $skillGroup.append(site.createSkillItem(name, group[name]));
                 }
@@ -158,19 +158,30 @@
                 .text(name);
             $item.append(name);
 
+            var $value = $("<div></div>")
+                .addClass("skill-value");
+
             // create an indicator for each possible value
             var maxVal = 5;
             for (var i = 1; i <= maxVal; i++) {
-                var $ind = $("<div></div>")
+                var $ind = $("<span></span>")
                     .addClass("skill-indicator");
 
                 // flag this indicator as having the value
                 if (i <= value) {
-                    $ind.addClass("active");
+                    $ind.addClass("fa fa-circle")
+                        .addClass("full");
+                } else {
+                    $ind.addClass("fa fa-circle-o")
+                        .addClass("empty");
                 }
 
-                $item.append($ind);
+                // add the indicator to the value element
+                $value.append($ind);
             }
+
+            // add the value bar to the item
+            $item.append($value);
 
             return $item;
         }

@@ -63,7 +63,7 @@ header {
   left: 0;
   height: 3em;
   width: 100%;
-  background: #000000;
+  background: #222222;
   color: #ffffff;
   -webkit-transition: transform 200ms ease-in;
   -moz-transition: transform 200ms ease-in;
@@ -104,7 +104,7 @@ nav {
   left: -240px;
   width: 240px;
   height: 100%;
-  background: #000000;
+  background: #222222;
   color: #ffffff;
   -webkit-transition: transform 200ms ease-in;
   -moz-transition: transform 200ms ease-in;
@@ -176,6 +176,19 @@ section h2 {
   font-size: 1.4em;
   line-height: 2em;
 }
+.column-flex {
+  width: 40rem;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.column-flex:before,
+.column-flex:after {
+  content: " ";
+  display: table;
+}
+.column-flex:after {
+  clear: both;
+}
 /* Intro Section
    ========================================================================== */
 section.intro {
@@ -220,36 +233,29 @@ section.skills {
   border-bottom: 1px solid #cccccc;
 }
 .skill-list .skill-group {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  padding: 0 0 2em 0;
 }
 .skill-list .skill-item {
-  padding: 0 0 .5em 0;
-  font-size: 1.2em;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 .2em;
+  font-size: 1.3em;
+}
+.skill-list .skill-item:hover {
+  background: #ffffff;
+}
+.skill-list .skill-value {
+  float: right;
+  padding: .4em 0 0 0;
 }
 .skill-list .skill-indicator {
   float: right;
-  width: 1.2em;
-  height: 1.2em;
-  margin: 0 .2em;
-  background: #a3abc3;
-  -webkit-border-top-left-radius: 50%;
-  -webkit-border-top-right-radius: 50%;
-  -webkit-border-bottom-right-radius: 50%;
-  -webkit-border-bottom-left-radius: 50%;
-  -moz-border-radius-topleft: 50%;
-  -moz-border-radius-topright: 50%;
-  -moz-border-radius-bottomright: 50%;
-  -moz-border-radius-bottomleft: 50%;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
+  padding: 0 0 0 .3em;
+  font-size: 1.2em;
+  color: #a3abc3;
 }
-.skill-list .skill-indicator.active {
-  background: #333333;
-  background: #2fc381;
+.skill-list .skill-indicator.full {
+  color: #2fc381;
 }
 /* Job
    ========================================================================== */
@@ -279,12 +285,10 @@ section.contact {
   color: #ffffff;
 }
 .contact-list {
-  width: 30rem;
-  margin: 0 auto;
   padding: 3em 0 0 0;
 }
 .contact-list .contact-item {
-  padding: 0 0 1em 0;
+  padding: .5em 4em;
   font-size: 1.4em;
 }
 .contact-list .contact-item a {
@@ -350,27 +354,29 @@ section.contact {
     font-size: 12px;
   }
   .content {
-    width: 85%;
+    width: 80%;
   }
   section {
     padding: 9em 0;
-  }
-  .contact-list {
-    width: 64rem;
-  }
-  .contact-list .contact-item {
-    float: left;
-    width: 30rem;
-    margin: 0 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
   html {
     font-size: 13px;
   }
-  .skill-list .skill-group {
+  /* Here we break up our columms */
+  .column-flex {
+    width: 63rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .column-flex .column-item {
     float: left;
-    margin: 0 45px;
+    width: 28rem;
+    margin: 0 1.75rem;
+  }
+  .contact-list .contact-item {
+    padding: .5em 0;
   }
 }
 @media screen and (min-width: 1200px) {
