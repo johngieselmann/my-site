@@ -88,17 +88,27 @@ header .menu .fa {
   font-size: 2rem;
   padding: .5rem;
 }
+header.nav-active {
+  -webkit-transform: translate3d(240px, 0, 0);
+  -moz-transform: translate3d(240px, 0, 0);
+  -ms-transform: translate3d(240px, 0, 0);
+  -o-transform: translate3d(240px, 0, 0);
+  transform: translate3d(240px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
 /* ==========================================================================
    Nav
    ========================================================================== */
 nav {
   position: fixed;
   z-index: 9999;
-  top: 3.2rem;
+  top: 0;
   left: -240px;
   bottom: 0;
   width: 240px;
   background: #222222;
+  background: #2fc381;
   color: #ffffff;
   -webkit-transition: transform 200ms ease-in;
   -moz-transition: transform 200ms ease-in;
@@ -107,17 +117,21 @@ nav {
   transition: transform 200ms ease-in;
   -webkit-backface-visibility: hidden;
 }
-nav ul {
-  padding: 3.2rem 0 0 0;
-}
 nav ul li {
   font-size: 1.5rem;
 }
 nav ul li a {
   display: block;
   padding: .8rem;
+  -webkit-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -o-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  -webkit-backface-visibility: hidden;
 }
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a.active {
   color: #333333;
   background: #f1f0f1;
 }

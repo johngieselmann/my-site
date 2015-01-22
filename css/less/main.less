@@ -95,9 +95,9 @@ header {
     }
 }
 
-//header.nav-active {
-//    .transform(translate3d(@navWidth, 0, 0));
-//}
+header.nav-active {
+    .transform(translate3d(@navWidth, 0, 0));
+}
 
 /* ==========================================================================
    Nav
@@ -106,17 +106,19 @@ header {
 nav {
     position: fixed;
     z-index: @navZ;
-    top: @headerHeight;
+//    top: @headerHeight;
+    top: 0;
     left: -@navWidth;
     bottom: 0;
     width: @navWidth;
 
     .background(@offBlack);
+    .background(@primary);
     .color(@white);
     .transition(transform, @navTransSpeed);
 
     ul {
-        padding: @headerHeight 0 0 0;
+//        padding: @headerHeight 0 0 0;
 
         li {
             font-size: 1.5rem;
@@ -124,9 +126,11 @@ nav {
             a {
                 display: block;
                 padding: .8rem;
+                .transition(all, 200ms);
             }
 
-            a:hover {
+            a:hover,
+            a.active {
                 .color(@darkGrey);
                 .background(@lightGrey);
             }

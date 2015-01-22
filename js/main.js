@@ -1,8 +1,10 @@
 (function(window, document, $, undefined){
 
+    /**
+     * The singleton nav menu class.
+     */
     var nav = {
-        items : null,
-
+        // nav menu state
         active : false,
 
         // nav elements
@@ -16,19 +18,23 @@
          * @return void
          */
         init : function() {
+            // find some elements
             nav.$moveEls = $(".js-nav-move");
             nav.$toggle = $(".js-nav-toggle");
             nav.$gotoEls = $(".js-nav-goto");
 
+            // bind some events
             nav.$toggle.on("click", nav.toggle);
             nav.$gotoEls.on("click", nav.gotoSection);
+
+            $(window).on("scroll", nav.setActiveMenu);
         },
 
         /**
          * Toggle the nav menu state. We can also force the menu to inactive
          * (hide it) by passing in true to the inactive param.
          *
-         * @param obj e
+         * @param Event e
          * @param bool inactive
          * @return void
          */
@@ -47,17 +53,27 @@
         },
 
         /**
+         * Get the section related to the link.
+         *
+         * @param jQuery $el
+         * @return jQuery
+         */
+        getSection : function($el) {
+            var name = $el.attr("rel");
+            return $("[data-section='" + name + "']");
+        },
+
+        /**
          * Go to a section of the site.
          *
-         * @param obj e
+         * @param Event e
          * @param obj el
          * @return void
          */
         gotoSection : function(e, el) {
             var $el = el || $(this);
 
-            var rel = $el.attr("rel");
-            var $section = $("[data-section='" + rel + "']");
+            var $section = nav.getSection($el);
             var top = $section.offset().top;
 
             // since we have to hide the nav menu, let that happen before
@@ -70,6 +86,43 @@
 
             // hide the menu
             nav.toggle(null, true);
+        },
+
+        /**
+         * Set the active menu item based on our scroll location on the page.
+         * I realize this is probably not the most optimized, but it is quick
+         * and dirty for a website that no one even visits so fuck 'em. Wow,
+         * terrible attitude, I apologize.
+         *
+         * @param Event e
+         * @return void
+         */
+        setActiveMenu : function(e) {
+
+            // first see if we are at the bottom of the page so we can just
+            // set the last item, otherwise we will check all the others
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                nav.$gotoEls.removeClass("active");
+                nav.$gotoEls.last().addClass("active");
+                return;
+            }
+
+            // check all the sections of the nav links to see how we are
+            // in relation to the scroll position
+            var scrollPos = $(document).scrollTop();
+            nav.$gotoEls.each(function () {
+                var $link = $(this);
+                var $section = nav.getSection($link);
+
+                // if the top of the section is above the top of the document
+                // and the bottom of the section is below the scrollPos
+                if (   $section.position().top <= scrollPos
+                    && ($section.position().top + $section.height()) > scrollPos
+                ) {
+                    nav.$gotoEls.removeClass("active");
+                    $link.addClass("active");
+                }
+            });
         }
     };
 
