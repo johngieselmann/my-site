@@ -257,6 +257,7 @@
             "JavaScript"  : 4,
             "jQuery"      : 4,
             "Angular.js"  : 4,
+            "Wordpress"   : 3,
             "LESS"        : 3,
             "Objective-C" : 2,
             "Swift"       : 2,
@@ -264,20 +265,21 @@
             "Ruby"        : 1
         },
         "Server" : {
+            "Nginx"   : 4,
             "Apache"  : 3,
-            "Nginx"   : 3,
             "Linux"   : 3,
             "Chef"    : 3,
             "Vagrant" : 3
         },
         "Tools" : {
             "Vim"         : 5,
-            "Git"         : 5,
             "Google Apps" : 5,
             "Dropbox"     : 5,
             "MS Office"   : 5,
+            "Git"         : 4,
             "Xcode"       : 4,
-            "Adobe Suite" : 4
+            "Adobe Suite" : 4,
+            "SVN"         : 3
         }
     };
 
