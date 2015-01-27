@@ -248,6 +248,13 @@ section.intro p {
 section.skills {
   background: #f1f0f1;
 }
+section.skills .resume {
+  font-size: 1.6em;
+  text-align: center;
+}
+section.skills .resume a {
+  text-decoration: underline;
+}
 .skill-list {
   padding: 5em 0 0 0;
 }

@@ -274,12 +274,12 @@
         "Tools" : {
             "Vim"         : 5,
             "Google Apps" : 5,
-            "Dropbox"     : 5,
             "MS Office"   : 5,
             "Git"         : 4,
             "Xcode"       : 4,
             "Adobe Suite" : 4,
-            "SVN"         : 3
+            "SVN"         : 3,
+            "Agile Scrum" : 3
         }
     };
 
