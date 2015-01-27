@@ -19,9 +19,9 @@ html {
 }
 
 body {
-    background: @white top center no-repeat url("../img/flag.png");
+    background: @primary top center no-repeat url("../img/flag.png");
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: 150%;
     overflow-x: hidden;
 //    .background(@white);
     .color(@darkGrey);
@@ -486,6 +486,10 @@ section.contact {
 @media screen and (min-width: 600px) {
     html {
         font-size: 11px;
+    }
+
+    body {
+        background-size: 100%;
     }
 
     .content {

@@ -21,9 +21,9 @@ html {
   background: #bae3ff;
 }
 body {
-  background: #ffffff top center no-repeat url("../img/flag.png");
+  background: #2fc381 top center no-repeat url("../img/flag.png");
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: 150%;
   overflow-x: hidden;
   color: #333333;
 }
@@ -424,6 +424,9 @@ section.contact {
   html {
     font-size: 11px;
   }
+  body {
+    background-size: 100%;
+  }
   .content {
     width: 90%;
   }
@@ -472,6 +475,3 @@ section.contact {
 /**
  * Adjustments for high-res devices
  */
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  
-}
