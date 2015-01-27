@@ -175,6 +175,15 @@ a::selection{
     content: '",';
 }
 
+.array-val-null {
+    color: 
+}
+
+.array-val-null:after {
+    color: #fff;
+    content: ',';
+}
+
 .array-close:after {
     color: #fff;
     content: ",";
