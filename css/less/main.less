@@ -19,8 +19,11 @@ html {
 }
 
 body {
+    background: @white top center no-repeat url("../img/flag.png");
+    background-attachment: fixed;
+    background-size: 100%;
     overflow-x: hidden;
-    .background(@white);
+//    .background(@white);
     .color(@darkGrey);
 }
 
@@ -204,7 +207,7 @@ section {
 
 section.intro {
 //    .background(@primary);
-    .gradient(@lightGreen, @green);
+//    .gradient(@lightGreen, @green);
     .color(@white);
 
     h1 {
@@ -224,7 +227,7 @@ section.intro {
 /* Profile
    ========================================================================== */
 section.profile {
-
+    .background(@white);
 }
 
 .profile-info {
@@ -320,6 +323,7 @@ section.skills {
 section.job {
 
 //    .background(@lime);
+    .background(@white);
 
     .job-list {
         padding: 5em 0 0 0;

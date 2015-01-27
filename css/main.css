@@ -21,8 +21,10 @@ html {
   background: #bae3ff;
 }
 body {
+  background: #ffffff top center no-repeat url("../img/flag.png");
+  background-attachment: fixed;
+  background-size: 100%;
   overflow-x: hidden;
-  background: #ffffff;
   color: #333333;
 }
 a,
@@ -200,14 +202,6 @@ section h2 {
 /* Intro Section
    ========================================================================== */
 section.intro {
-  background: #68e1a9;
-  background: -moz-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #68e1a9), color-stop(100%, #2fc381));
-  background: -webkit-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
-  background: -o-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
-  background: -ms-linear-gradient(top, #68e1a9 0%, #2fc381 100%);
-  background: linear-gradient(to bottom, #68e1a9 0%, #2fc381 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@top', endColorstr='@bottom', GradientType=0);
   color: #ffffff;
 }
 section.intro h1 {
@@ -222,6 +216,9 @@ section.intro p {
 }
 /* Profile
    ========================================================================== */
+section.profile {
+  background: #ffffff;
+}
 .profile-info {
   padding: 5em 0 0 0;
 }
@@ -293,6 +290,9 @@ section.skills .resume a {
 }
 /* Job
    ========================================================================== */
+section.job {
+  background: #ffffff;
+}
 section.job .job-list {
   padding: 5em 0 0 0;
 }
