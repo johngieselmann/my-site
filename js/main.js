@@ -59,7 +59,7 @@
          * @return jQuery
          */
         getSection : function($el) {
-            var name = $el.attr("rel");
+            var name = $el.attr("data-rel");
             return $("[data-section='" + name + "']");
         },
 
