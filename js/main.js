@@ -28,6 +28,7 @@
             nav.$gotoEls.on("click", nav.gotoSection);
 
             $(window).on("scroll", nav.setActiveMenu);
+            nav.setActiveMenu(null);
         },
 
         /**
@@ -71,7 +72,10 @@
          * @return void
          */
         gotoSection : function(e, el) {
+
             var $el = el || $(this);
+//            nav.$gotoEls.removeClass("active");
+//            $el.addClass("active");
 
             var $section = nav.getSection($el);
             var top = $section.offset().top;
@@ -86,6 +90,9 @@
 
             // hide the menu
             nav.toggle(null, true);
+
+//            setTimeout(nav.setActiveMenu, 500);
+            e.preventDefault();
         },
 
         /**
@@ -107,9 +114,18 @@
                 return;
             }
 
+            // get the current scroll position
+            var scrollPos = $(document).scrollTop();
+
+            // check if we are at the top to avoid some more looping
+            if (scrollPos <= 0) {
+                nav.$gotoEls.removeClass("active");
+                nav.$gotoEls.first().addClass("active");
+                return;
+            }
+
             // check all the sections of the nav links to see how we are
             // in relation to the scroll position
-            var scrollPos = $(document).scrollTop();
             nav.$gotoEls.each(function () {
                 var $link = $(this);
                 var $section = nav.getSection($link);
