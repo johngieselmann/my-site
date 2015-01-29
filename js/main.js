@@ -265,8 +265,8 @@
             "Ruby"        : 1
         },
         "Server" : {
-            "Nginx"   : 4,
-            "Apache"  : 3,
+            "Apache"  : 4,
+            "nginx"   : 3,
             "Linux"   : 3,
             "Chef"    : 3,
             "Vagrant" : 3
