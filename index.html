@@ -7,9 +7,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>John Gieselmann</title>
-    <meta name="description" content="Hello, my name is John and I like to party. Also, I am a full-stack web developer and budding iOS developer for People Productions in Boulder, CO.">
+    <meta name="description" content="Hello, my name is John and I like to party. Also, I am a full-stack web developer that loves a challenge.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="web,app,developer,john,gies,gieselmann,denver,boulder,profile,intro,about,php,html,css,javascript,laravel,angular">
+    <meta name="keywords" content="web developer,app developer,denver app developer,denver web developer,boulder app developer,boulder web developer,john,gies,john gieselmann,john gieselmann website,john gieselmann profile,about john,php,html,css,javascript,laravel,angular">
 
     <!-- Icons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -25,10 +25,6 @@
 
     <!-- JS -->
     <script type="text/javascript" src="js/vendor/modernizr-2.7.0.min.js"></script>
-
-    <!--
-        CREDITS:
-    -->
 </head>
 <body>
     <!--[if lt IE 8]>
@@ -41,17 +37,17 @@
 
     <nav class="js-nav-move">
         <ul>
-            <li><a class="nav-link js-nav-goto" data-rel="intro">Top</a></li>
-            <li><a class="nav-link js-nav-goto" data-rel="profile">Profile</a></li>
-            <li><a class="nav-link js-nav-goto" data-rel="skills">Skills</a></li>
-            <li><a class="nav-link js-nav-goto" data-rel="job">My Job</a></li>
-            <li><a class="nav-link js-nav-goto" data-rel="contact">Contact Me</a></li>
+            <li><a href="#intro" class="nav-link js-nav-goto" data-rel="intro">Top</a></li>
+            <li><a href="#profile" class="nav-link js-nav-goto" data-rel="profile">Profile</a></li>
+            <li><a href="#skills" class="nav-link js-nav-goto" data-rel="skills">Skills</a></li>
+            <li><a href="#job" class="nav-link js-nav-goto" data-rel="job">My Job</a></li>
+            <li><a href="#contact" class="nav-link js-nav-goto" data-rel="contact">Contact Me</a></li>
         </ul>
     </nav>
 
     <main class="js-nav-move">
 
-        <section class="intro" data-section="intro">
+        <section id="intro" class="intro" data-section="intro">
             <div class="content">
                 <h1>John Gieselmann</h1>
                 <hr>
@@ -59,7 +55,7 @@
             </div><!-- /.content -->
         </section><!-- /.intro -->
 
-        <section class="profile" data-section="profile">
+        <section id="profile" class="profile" data-section="profile">
             <div class="content">
                 <h1>Me in a Nutshell</h1>
                 <hr>
@@ -100,18 +96,18 @@
             </div><!-- /.content -->
         </section><!-- /.profile -->
 
-        <section class="skills" data-section="skills">
+        <section id="skills" class="skills" data-section="skills">
             <div class="content">
                 <h1>Skills</h1>
                 <hr>
                 <h2>...that pay the bills.</h2>
 
                 <div class="skill-list js-skill-list column-flex"></div><!-- /.skill-list -->
-                <p class="resume">You can also view my <a href="resume.html" target="_blank">r&eacute;sum&eacute;</a></p>
+                <p class="resume">You can also view my <a href="resume.html" target="_blank">Vim r&eacute;sum&eacute;</a> or <a href="media/John_Gieselmann_Resume.pdf" target="_blank">print r&eacute;sum&eacute;</a></p>
             </div><!-- /.content -->
         </section>
 
-        <section class="job" data-section="job">
+        <section id="job" class="job" data-section="job">
             <div class="content">
                 <h1>My Job</h1>
                 <hr>
@@ -142,7 +138,7 @@
             </div><!-- /.content -->
         </section>
 
-        <section class="contact" data-section="contact">
+        <section id="contact" class="contact" data-section="contact">
             <div class="content">
                 <h1>Contact</h1>
                 <hr>
