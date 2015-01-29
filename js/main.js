@@ -278,7 +278,8 @@
             "Objective-C" : 2,
             "Swift"       : 2,
             "Backbone.js" : 2,
-            "Ruby"        : 1
+            "Ruby"        : 1,
+            "Python"      : 1
         },
         "Server" : {
             "Apache"  : 4,
@@ -295,7 +296,8 @@
             "Xcode"       : 4,
             "Adobe Suite" : 4,
             "SVN"         : 3,
-            "Agile Scrum" : 3
+            "Agile Scrum" : 3,
+            "Jira"        : 3
         }
     };
 
