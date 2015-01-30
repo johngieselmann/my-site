@@ -2,17 +2,18 @@
 
 User-agent: *
 
+# Sounds
+Disallow: /sounds/
+
 # Images
 Disallow: /img/scorpion.png
-
-# Resume
-Disallow: /resume.php
-
-# Christmas stuff
-Disallow: /img/christmas/
-Disallow: /christmas.html
+Disallow: /img/flag.png
 
 # Testing
 Disallow: /dots-game/
 Disallow: /fletcher-and-roy/
 Disallow: /green-zone/
+Disallow: /test/
+
+# Examples
+Disallow: /examples/
