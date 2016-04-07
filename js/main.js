@@ -290,10 +290,10 @@
             "Vim"           : 5,
             "Google Apps"   : 5,
             "Git"           : 4,
-            "Xcode"         : 4,
             "Agile Scrum"   : 4,
             "Jira"          : 4,
             "Adobe Suite"   : 3,
+            "Xcode"         : 3,
         }
     };
 
