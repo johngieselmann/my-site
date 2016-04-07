@@ -272,7 +272,7 @@
             "MongoDB"       : 4,
             "JavaScript"    : 4,
             "jQuery"        : 4,
-            "Less / Sass"   : 4,
+            "Sass / Less"   : 4,
             "Angular.js"    : 3,
             "Redis"         : 3,
             "Objective-C"   : 2,
