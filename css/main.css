@@ -331,6 +331,10 @@ section.job .job-list .description ul {
 section.job .job-list .description ul li {
   padding: .5rem 0;
 }
+section.job .job-list .description ul ul {
+  list-style-type: circle;
+  padding-right: 0;
+}
 section.job .job-list .description a {
   font-weight: 700;
   color: #2fc381;
@@ -478,6 +482,3 @@ section.contact {
 /**
  * Adjustments for high-res devices
  */
-@media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
-  
-}
