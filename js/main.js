@@ -276,7 +276,7 @@
             "React.js"      : 3,
             "Angular.js"    : 3,
             "Redis"         : 3,
-            "Objective-C"   : 2,
+            "Elasticsearch" : 3,
             "Swift"         : 2,
         },
         "Server" : {
