@@ -1,0 +1,26 @@
+// ------------------------------------
+// Main Site Bootstrap
+// ------------------------------------
+
+// Base line stuff
+@import "variables";
+@import "mixins";
+
+// Fonts
+$fa-font-path: "../fonts/vendor/font-awesome";
+@import "vendor/font-awesome/font-awesome.scss";
+@import "fonts";
+
+// Reset, layout and basic styles
+@import "normalize";
+@import "foundation";
+@import "layout";
+@import "type";
+
+// Core UI items
+@import "forms";
+@import "nav";
+@import "header";
+@import "buttons";
+@import "boxes";
+@import "utilities";

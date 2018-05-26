@@ -1,0 +1,94 @@
+// ------------------------------------
+// Buttons
+// ------------------------------------
+
+.btn {
+  $darken-percent: 5%;
+
+  display: inline-block;
+  padding: $btn-padding;
+
+  cursor: pointer;
+  text-align: center;
+
+  outline: none;
+  color: $btn-default-color;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  background: $btn-default-bkg;
+  border: $btn-border;
+
+  -webkit-appearance: none;
+
+  @include border-radius($btn-border-radius);
+  @include transition($transition-base);
+
+  &.btn-block {
+    display: block;
+    width: auto;
+    margin-bottom: 5px;
+  }
+
+  &.btn-default {
+    border-color: $btn-default-bkg;
+    background: $btn-default-bkg;
+    color: $btn-default-color;
+
+    &:hover {
+      border-color: darken($btn-default-bkg, $darken-percent);
+      background: darken($btn-default-bkg, $darken-percent);
+    }
+  }
+
+  &.btn-primary {
+    border-color: $btn-primary-bkg;
+    background: $btn-primary-bkg;
+    color: $btn-primary-color;
+
+    &:hover {
+      border-color: darken($btn-primary-bkg, $darken-percent);
+      background: darken($btn-primary-bkg, $darken-percent);
+    }
+  }
+
+  &.btn-secondary {
+    border-color: $btn-secondary-bkg;
+    background: $btn-secondary-bkg;
+    color: $btn-secondary-color;
+
+    &:hover {
+      border-color: darken($btn-secondary-bkg, $darken-percent);
+      background: darken($btn-secondary-bkg, $darken-percent);
+    }
+  }
+
+  &.btn-tertiary {
+    border-color: $btn-tertiary-bkg;
+    background: $btn-tertiary-bkg;
+    color: $btn-tertiary-color;
+
+    &:hover {
+      border-color: darken($btn-tertiary-bkg, $darken-percent);
+      background: darken($btn-tertiary-bkg, $darken-percent);
+    }
+  }
+
+  &.btn-light {
+    border-color: $btn-light-border-color;
+    background: $btn-light-bkg;
+    color: $btn-light-color;
+
+    &:hover {
+//      border-color: darken($btn-light-border-color, 3%);
+      background: darken($btn-light-bkg, 3%);
+      background: lighten($btn-light-bkg, 3%);
+    }
+  }
+
+  &.btn-link {
+    text-decoration: none;
+    background: transparent;
+    color: $font-color;
+  }
+}

@@ -1,0 +1,94 @@
+// ------------------------------------
+// Boxes
+// ------------------------------------
+
+.box-sm {
+  max-width: $box-width-sm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-md {
+  max-width: $box-width-md;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-lg {
+  max-width: $box-width-lg;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box-nav {
+  padding: 5px;
+
+  background: $box-bkg;
+  border: 1px solid $box-border-color;
+
+  @include border-radius($box-border-radius);
+
+  @include respond-to(desktop) {
+    float: left;
+    width: 30%;
+
+    &+ .box {
+      float: left;
+      width: 70%;
+    }
+  }
+}
+
+.box {
+  display: block;
+  padding: $box-padding;
+  margin-bottom: $box-margin;
+
+  background: $box-bkg;
+  border: 1px solid $box-border-color;
+
+  @include border-radius($box-border-radius);
+  @include box-shadow($box-box-shadow);
+  @include transition($transition-base);
+
+  .box-heading {
+    padding-bottom: $box-padding;
+    margin-bottom: $box-padding;
+
+    border-bottom: 1px solid $box-border-color;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      padding: 0;
+    }
+  }
+
+  &.box-btn {
+    border-width: 5px;
+    border-width: 0;
+    border-color: $box-btn-border-color;
+    background: $box-btn-bkg;
+
+    @include box-shadow(none);
+
+    @include respond-to(desktop) {
+      &:hover {
+        background-color: $box-btn-bkg-active;
+        border-color: $box-btn-bkg-active;
+        color: $box-btn-color-active;
+        cursor: pointer;
+
+        @include box-shadow(0 1px 8px 0px rgba(0,0,0,0.3));
+      }
+    }
+  }
+
+  &.active {
+    background-color: $box-btn-bkg-active;
+    border-color: $box-btn-bkg-active;
+    color: $box-btn-color-active;
+  }
+}

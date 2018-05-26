@@ -1,0 +1,35 @@
+// ------------------------------------
+// Foundation
+//
+// The foundational DOM styles
+// ------------------------------------
+
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+
+  background: $body-bkg;
+  color: $font-color;
+  overflow-x: hidden;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(0, 0, 0, .1);
+  margin: 20px 0;
+}

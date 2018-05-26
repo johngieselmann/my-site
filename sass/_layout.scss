@@ -1,0 +1,57 @@
+// ------------------------------------
+// Layout classes
+// ------------------------------------
+
+.content {
+
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: ($spacing-padding / 2);
+  padding-right: ($spacing-padding / 2);
+
+  @include respond-to($nav-break-sm) {
+    padding-left: $spacing-padding;
+    padding-right: $spacing-padding;
+  }
+}
+
+.row {
+  margin-bottom: $spacing-padding;
+
+  @include clearfix();
+
+  &:empty {
+    margin-bottom: 0;
+  }
+}
+
+.col-left {
+  padding-right: 0;
+
+  @include respond-to($nav-break-sm) {
+    float: left;
+    width: 50%;
+    padding-right: $spacing-padding / 2;
+  }
+}
+
+.col-right {
+  padding-left: 0;
+
+  @include respond-to($nav-break-sm) {
+    float: right;
+    width: 50%;
+    padding-left: $spacing-padding / 2;
+  }
+}
+
+.square {
+  @include square();
+}
+
+.circle {
+  @include circle();
+}

@@ -1,0 +1,78 @@
+// ------------------------------------
+// Font Type
+// ------------------------------------
+
+html {
+  font-size: $font-size-base;
+  font-family: $font-primary;
+  font-weight: $font-weight-base;
+}
+
+body {
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: .5em 0 1em 0;
+
+  font-weight: 100;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+h2 {
+  font-size: $h2-font-size;
+}
+h3 {
+  font-size: $h3-font-size;
+}
+h4 {
+  font-size: $h4-font-size;
+}
+h5 {
+  font-size: $font-size-base;
+  font-weight: bold;
+}
+
+a,
+a:hover,
+a:focus,
+a:visited
+a:link {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 400;
+}
+
+.lighten {
+  color: lighten($font-color, 25%);
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-justify {
+  text-align: justify;
+}
+
+.small {
+  font-size: .8em;
+}
+.large {
+  font-size: 1.2em;
+}
