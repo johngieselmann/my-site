@@ -1,0 +1,55 @@
+
+.main-section {
+  min-height: 100vh;
+
+  &.intro {
+    background: $brand-dark;
+    color: $vim-teal;
+
+    h1 {
+      width: 50vw;
+      margin: 0 auto;
+      padding-top: 40vh;
+      padding-bottom: 1vw;
+
+      font-size: 10vw;
+      font-weight: bold;
+      font-family: $font-mono;
+      text-align: center;
+//      text-transform: uppercase;
+      border-bottom: 1.5vw solid $vim-purple;
+    }
+  }
+
+  &.about {
+    background: $white;
+    color: $brand-dark;
+
+    h1 {
+      padding-top: 40vh;
+      padding-bottom: 1vw;
+
+      font-size: 10vw;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 2vw solid $white;
+    }
+  }
+
+  &.skills {
+    background: $brand-dark;
+    color: $white;
+
+    h1 {
+      padding-top: 40vh;
+      padding-bottom: 1vw;
+
+      font-size: 10vw;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      border-bottom: 2vw solid $white;
+    }
+  }
+}

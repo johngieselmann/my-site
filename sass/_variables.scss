@@ -11,16 +11,23 @@ $green:                               #0f0;
 $blue:                                #00f;
 $yellow:                              #0ff;
 $brand-grey:                          #ccc;
-$brand-dark:                          #222;
+$brand-dark:                          #242424;
 $brand-danger:                        $red;
 $brand-primary:                       $black;
 $brand-secondary:                     $brand-dark;
 $brand-tertiary:                      $brand-dark;
 $body-bkg:                            $white;
+$vim-blue:                            #6a76fb;
+$vim-teal:                            #68fdfe;
+$vim-green:                           #1dc123;
+$vim-yellow:                          #bdc329;
+$vim-orange:                          #ad5f1d;
+$vim-purple:                          #c239bf;
 
 // Type
 $font-primary:                        'Helvetica', 'Arial', 'Verdana', sans-serif;
 $font-title:                          'NexaBold', 'Helvetica', 'Arial', 'Verdana', sans-serif;
+$font-mono:                           'Monaco', 'Source Code Pro', 'monospace';
 $font-size-base:                      14px;
 $line-height-base:                    16px;
 $font-weight-base:                    100;
