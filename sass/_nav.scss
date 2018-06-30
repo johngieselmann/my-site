@@ -2,6 +2,24 @@
 // Nav
 // ------------------------------------
 
-.nav {
+nav {
+  right: -$nav-width-open;
+  position: absolute;
+  width: $nav-width-open;
+  height: calc(100vh - #{$header-height-sm});
 
+  background: rgba($brand-dark, .8);
+  color: $white;
+
+  @include transition(right 250ms ease-in-out);
+
+  &.active {
+    right: 0;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+  }
 }
+

@@ -10,34 +10,29 @@
     $win = $(window);
     $body = $("body");
 
-//    /**
-//     * Object literal class.
-//     *
-//     * @author JohnG <john.gieselmann@gmail.com>
-//     */
-//    var app = {
-//        init: function() {
-//
-//        }
-//    };
-//
-//    app.init();
+    $(".js-nav-toggle").on("click", function(e) {
+      e.stopPropagation();
 
-//    /**
-//     * Function class.
-//     *
-//     * @author JohnG <john.gieselmann@gmail.com>
-//     */
-//    function AppClass() {
-//        var self = this;
-//        
-//        this.init = function() {
-//
-//        };
-//    }
-//
-//    // instantiate and initialize the class
-//    var app = new AppClass();
-//    app.init();
+      $toggle = $(this);
+      $nav = $(".js-nav");
 
- })(window, document, undefined, jQuery);
+      function showNav() {
+        $nav.addClass("active");
+        $toggle.addClass("active");
+      }
+
+      function hideNav() {
+        $nav.removeClass("active");
+        $toggle.removeClass("active");
+      }
+
+      if ($toggle.hasClass("active")) {
+        $body.off("click", hideNav);
+        hideNav();
+      } else {
+        $body.on("click", hideNav);
+        showNav();
+      }
+    });
+
+})(window, document, undefined, jQuery);

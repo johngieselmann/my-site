@@ -3,5 +3,45 @@
 // ------------------------------------
 
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: $header-height-sm;
 
+  background: $brand-dark;
+  color: $white;
+
+  @include respond-to(desktop) {
+    height: $header-height-lg;
+  }
+
+  h1 {
+    height: $header-height-sm;
+    line-height: $header-height-sm;
+    padding: 0 0 0 $spacing-padding;
+
+    font-size: 20px;
+
+    @include respond-to(desktop) {
+      height: $header-height-lg;
+      line-height: $header-height-lg;
+    }
+  }
+
+  .nav-toggle {
+    position: absolute;
+    right: 0;
+    height: $header-height-sm;
+    line-height: $header-height-sm;
+    padding-right: $spacing-padding;
+    padding-left: $spacing-padding;
+
+    font-size: 2em;
+    cursor: pointer;
+
+    @include respond-to(desktop) {
+      height: $header-height-lg;
+      line-height: $header-height-lg;
+    }
+  }
 }

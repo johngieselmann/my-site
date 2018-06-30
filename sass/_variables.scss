@@ -10,6 +10,7 @@ $red:                                 #f00;
 $green:                               #0f0;
 $blue:                                #00f;
 $yellow:                              #0ff;
+$purple:                              #5857C6;
 $brand-grey:                          #ccc;
 $brand-dark:                          #242424;
 $brand-danger:                        $red;
@@ -23,6 +24,7 @@ $vim-green:                           #1dc123;
 $vim-yellow:                          #bdc329;
 $vim-orange:                          #ad5f1d;
 $vim-purple:                          #c239bf;
+$vim-grey:                            #c1c7c1;
 
 // Type
 $font-primary:                        'Helvetica', 'Arial', 'Verdana', sans-serif;
@@ -75,11 +77,7 @@ $header-bkg:                          $brand-secondary;
 $nav-link-height-sm:                  44px;
 $nav-link-height-lg:                  60px;
 $nav-width-closed:                    60px;
-$nav-width-open:                      220px;
-$nav-break-sm:                        $screen-md-min;
-$nav-break-lg:                        $container-max-width + $nav-width-open;
-$nav-trans-speed:                     200ms;
-$nav-trans-timing:                    ease-in;
+$nav-width-open:                      100vw;//300px;
 
 // Buttons
 $btn-padding:                         .5em;

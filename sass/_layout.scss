@@ -19,7 +19,7 @@ body {
   padding-left: ($spacing-padding / 2);
   padding-right: ($spacing-padding / 2);
 
-  @include respond-to($nav-break-sm) {
+  @include respond-to(tablet) {
     padding-left: $spacing-padding;
     padding-right: $spacing-padding;
   }
@@ -38,7 +38,7 @@ body {
 .col-left {
   padding-right: 0;
 
-  @include respond-to($nav-break-sm) {
+  @include respond-to(tablet) {
     float: left;
     width: 50%;
     padding-right: $spacing-padding / 2;
@@ -48,7 +48,7 @@ body {
 .col-right {
   padding-left: 0;
 
-  @include respond-to($nav-break-sm) {
+  @include respond-to(tablet) {
     float: right;
     width: 50%;
     padding-left: $spacing-padding / 2;
