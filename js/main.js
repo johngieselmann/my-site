@@ -38,8 +38,20 @@
 
     var skills = {
       "Dev" : {
-        "PHP"     : 5,
-        "Laravel" : 4,
+        "PHP"           : 5,
+        "HTML"          : 5,
+        "CSS"           : 5,
+        "Laravel"       : 4,
+        "MySQL"         : 4,
+        "MongoDB"       : 4,
+        "JavaScript"    : 4,
+        "jQuery"        : 4,
+        "Sass / Less"   : 4,
+        "React.js"      : 3,
+        "Angular.js"    : 3,
+        "Redis"         : 3,
+        "Elasticsearch" : 3,
+        "Swift"         : 2,
       }
     };
 
@@ -51,9 +63,9 @@
 
         var $groupSkills = '';
         for (var name in skills[group]) {
-          var level = skills[group][name];
 
           // create the individual skill
+          var level = skills[group][name];
           var $skill = '<div class="skill-set">';
 
           $skill += '<div class="skill">' + name + '</div>';
@@ -75,6 +87,7 @@
         }
 
         $skills += '<div class="skill-group">'
+          + '<h4>' + group + '</h4>'
           + $groupSkills
           + '</div>';
       }
