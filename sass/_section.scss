@@ -3,9 +3,8 @@
   height: 100vh;
 
   &.intro {
-    background: $brand-dark;
-//    color: $vim-teal;
-    color: $white;
+    color: $brand-primary;
+    background: $white;
 
     h1 {
       width: 50vw;
@@ -15,10 +14,18 @@
 
       font-size: 10vw;
       font-weight: bold;
-//      font-family: $font-mono;
       text-align: center;
-//      text-transform: uppercase;
-//      border-bottom: 1.5vw solid $vim-purple;
+    }
+
+    h2 {
+      width: 50vw;
+      margin: 0 auto;
+      padding-bottom: 1vw;
+
+      font-size: 3vw;
+      font-weight: 100;
+      text-align: center;
+      color: darken($brand-grey, 30%);
     }
   }
 
@@ -50,10 +57,10 @@
       @include transition(background 250ms ease-in-out);
 
       &:first-child {
-        background: $purple;
+        background: $brand-primary;
 
         &:hover {
-          background: darken($purple, 5%);
+          background: darken($brand-primary, 5%);
           .profile-img {
             border-radius: 50%;
           }
@@ -115,6 +122,10 @@
         padding-top: $spacing-padding / 2;
         padding-bottom: $spacing-padding / 2;
 
+        &:hover {
+          background: $off-white;
+        }
+
         .skill {
           flex: 2 1 auto;
         }
@@ -125,6 +136,20 @@
 
           i {
             padding-left: 2px;
+          }
+
+          span {
+            display: inline-block;
+            width: 20px;
+            height: 7px;
+            margin-left: 5px;
+          }
+
+          .level-open {
+            background: $brand-grey;
+          }
+          .level-full {
+            background: $brand-primary;
           }
         }
       }

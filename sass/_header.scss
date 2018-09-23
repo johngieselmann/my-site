@@ -8,8 +8,9 @@
   width: 100%;
   height: $header-height-sm;
 
-  background: $brand-dark;
-  color: $white;
+  background: $white;
+  color: $black;
+  @include box-shadow(0 1px 10px rgba(0,0,0,.1));
 
   @include respond-to(desktop) {
     height: $header-height-lg;

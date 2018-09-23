@@ -73,9 +73,11 @@
           $skill += '<div class="level">';
           for (var i = 1; i <= 5; i++) {
             if (i <= level) {
-              $skill += '<i class="fa fa-circle"></i>';
+//              $skill += '<i class="fa fa-circle"></i>';
+              $skill += '<span class="level-full"></span>';
             } else {
-              $skill += '<i class="fa fa-circle-o"></i>';
+//              $skill += '<i class="fa fa-circle-o"></i>';
+              $skill += '<span class="level-open"></span>';
             }
           }
           $skill += "</div>";
