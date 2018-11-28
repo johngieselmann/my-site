@@ -78,13 +78,13 @@
 //            $el.addClass("active");
 
             var $section = nav.getSection($el);
-            var top = $section.offset().top;
+            var sectionTop = $section.offset().top;
 
             // since we have to hide the nav menu, let that happen before
             // we navigate to the section
             setTimeout(function() {
-                $("body").animate({
-                    scrollTop : top
+                $("html, body").animate({
+                    scrollTop : sectionTop
                 }, 300);
             }, 250);
 
