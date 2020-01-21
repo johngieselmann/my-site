@@ -277,7 +277,7 @@
             "Angular.js"    : 3,
             "Redis"         : 3,
             "Elasticsearch" : 3,
-            "Swift"         : 2,
+            "Python"        : 1,
         },
         "Server" : {
             "nginx"         : 3,
