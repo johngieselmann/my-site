@@ -2,6 +2,8 @@
 
 User-agent: *
 
+Disallow: /resume.html
+
 # Sounds
 Disallow: /sounds/
 
