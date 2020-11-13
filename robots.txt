@@ -8,8 +8,8 @@ Disallow: /resume.html
 Disallow: /sounds/
 
 # Images
-Disallow: /img/scorpion.png
-Disallow: /img/flag.png
+Disallow: /img/
+Disallow: /media/
 
 # Testing
 Disallow: /dots-game/
