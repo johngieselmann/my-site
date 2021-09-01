@@ -270,10 +270,12 @@
       "Ruby"        : 3,
       "HTML"        : 3,
       "CSS"         : 3,
+      "Java"        : 3,
     },
     "Frameworks"  : {
       "Laravel"     : 3,
       "React"       : 3,
+      "Angular"     : 3,
       "Node"        : 3,
       "Rails"       : 3,
       "Sass / Less" : 3,
