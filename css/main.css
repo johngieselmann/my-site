@@ -274,30 +274,24 @@ section.skills .resume a {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  background: #ccc;
-  background: #cccccc;
-}
-.skill-list .skill-item {
-  height: 2em;
-  line-height: 2em;
-  padding: 0 0.2em;
-  cursor: default;
-}
-.skill-list .skill-item:hover {
   background: #f1f0f1;
 }
-.skill-list .skill-value {
-  float: right;
-  padding: 0.4em 0 0 0;
+.skill-list .skill-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
-.skill-list .skill-indicator {
-  float: right;
-  padding: 0 0 0 0.3em;
-  font-size: 1.2em;
-  color: #a3abc3;
-}
-.skill-list .skill-indicator.full {
-  color: #2fc381;
+.skill-list .skill-item {
+  flex-grow: 1;
+  text-align: center;
+  padding: 0.5em 0.7em;
+  cursor: default;
+  background: #2fc381;
+  color: #ffffff;
 }
 /* Job
    ========================================================================== */

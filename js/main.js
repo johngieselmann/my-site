@@ -196,11 +196,15 @@
           .addClass("skill-group")
           .addClass("column-item")
           .append($groupName);
+        var $skillItems = $("<div></div>")
+          .addClass("skill-items");
 
         // create all the line items for this group
         for (var name in group) {
-          $skillGroup.append(site.createSkillItem(name, group[name]));
+          $skillItems.append(site.createSkillItem(name, group[name]));
         }
+
+        $skillGroup.append($skillItems);
 
         // add the group to the list
         $list.append($skillGroup);
@@ -227,30 +231,30 @@
         .text(name);
       $item.append(name);
 
-      var $value = $("<div></div>")
-        .addClass("skill-value");
-
-      // create an indicator for each possible value
-      var maxVal = 5;
-      for (var i = 1; i <= maxVal; i++) {
-        var $ind = $("<span></span>")
-          .addClass("skill-indicator");
-
-        // flag this indicator as having the value
-        if (i <= value) {
-          $ind.addClass("fa fa-circle")
-            .addClass("full");
-        } else {
-          $ind.addClass("fa fa-circle-o")
-            .addClass("empty");
-        }
-
-        // add the indicator to the value element
-        $value.append($ind);
-      }
-
-      // add the value bar to the item
-      $item.append($value);
+//      var $value = $("<div></div>")
+//        .addClass("skill-value");
+//
+//      // create an indicator for each possible value
+//      var maxVal = 5;
+//      for (var i = 1; i <= maxVal; i++) {
+//        var $ind = $("<span></span>")
+//          .addClass("skill-indicator");
+//
+//        // flag this indicator as having the value
+//        if (i <= value) {
+//          $ind.addClass("fa fa-circle")
+//            .addClass("full");
+//        } else {
+//          $ind.addClass("fa fa-circle-o")
+//            .addClass("empty");
+//        }
+//
+//        // add the indicator to the value element
+//        $value.append($ind);
+//      }
+//
+//      // add the value bar to the item
+//      $item.append($value);
 
       return $item;
     }
@@ -267,18 +271,23 @@
       "PHP"         : 3,
       "Python"      : 3,
       "JavaScript"  : 3,
-      "Ruby"        : 3,
       "HTML"        : 3,
       "CSS"         : 3,
+      "Ruby"        : 3,
       "Java"        : 3,
+      "Objective-C" : 3,
     },
     "Frameworks"  : {
+      "REST"        : 3,
       "Laravel"     : 3,
+      "Zend"        : 3,
       "React"       : 3,
+      "Vue"         : 3,
       "Angular"     : 3,
+      "jQuery"      : 3,
       "Node"        : 3,
       "Rails"       : 3,
-      "Sass / Less" : 3,
+      "Sass"        : 3,
       "WordPress"   : 3,
     },
     "Data"  : {
@@ -289,19 +298,24 @@
       "Elasticsearch" : 3,
     },
     "Infrastructure"  : {
+      "AWS"           : 3,
+      "GCP"           : 3,
+      "Vagrant"       : 3,
       "Docker"        : 3,
       "Kubernetes"    : 3,
-      "AWS"           : 3,
-      "Google Cloud"  : 3,
-      "Object Rocket" : 3,
+      "Chef"          : 3,
     },
     "Tools" : {
+      "Vim"         : 3,
+      "Git"         : 3,
       "Slack"       : 3,
       "Jira"        : 3,
       "Confluence"  : 3,
-      "Postman"     : 3,
       "Adobe Suite" : 3,
-      "Vim"         : 3,
+      "Stripe"      : 3,
+      "Segment"     : 3,
+      "DataDog"     : 3,
+      "Postman"     : 3,
     }
   };
 

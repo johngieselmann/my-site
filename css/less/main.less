@@ -292,38 +292,63 @@ section.skills {
         font-weight: bold;
         text-transform: uppercase;
         text-align: center;
-        .background(@medGrey);
-    }
-
-    .skill-item {
-        height: 2em;
-        line-height: 2em;
-        padding: 0 .2em;
-        cursor: default;
-    }
-
-    .skill-item:hover {
-//        .background(@white);
         .background(@lightGrey);
     }
 
-    .skill-value {
-        float: right;
-        padding: .4em 0 0 0;
+    .skill-items {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: .5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
     }
 
-    .skill-indicator {
-        float: right;
-        padding: 0 0 0 .3em;
+    .skill-item {
+//        width: 5em;
+//        height: 5em;
+//        line-height: 5em;
+//        margin: 1em 1em 0 0;
 
-        font-size: 1.2em;
-
-        .color(@grey);
+        flex-grow: 1;
+        text-align: center;
+        padding: .5em .7em;
+        cursor: default;
+//        .circle();
+        .background(@primary);
+        .color(@white);
     }
 
-    .skill-indicator.full {
-        .color(@primary);
-    }
+//    .skill-item {
+//        height: 2em;
+//        line-height: 2em;
+//        padding: 0 .2em;
+//        cursor: default;
+//    }
+//
+//    .skill-item:hover {
+////        .background(@white);
+//        .background(@lightGrey);
+//    }
+//
+//    .skill-value {
+//        float: right;
+//        padding: .4em 0 0 0;
+//    }
+//
+//    .skill-indicator {
+//        float: right;
+//        padding: 0 0 0 .3em;
+//
+//        font-size: 1.2em;
+//
+//        .color(@grey);
+//    }
+//
+//    .skill-indicator.full {
+//        .color(@primary);
+//    }
 }
 
 /* Job
