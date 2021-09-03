@@ -21,7 +21,7 @@ html {
   background: #BAE3FF;
 }
 body {
-  background: #2fc381 top center no-repeat url("../img/flag.png");
+  background: #ffffff top center no-repeat url("../img/tropical.png");
   background-attachment: fixed;
   background-size: 175%;
   overflow-x: hidden;
@@ -238,15 +238,19 @@ section.profile {
   text-align: center;
 }
 .profile-info .profile-items h3 {
+  padding-top: 0.5rem;
   font-size: 1.4em;
   font-weight: 700;
 }
 .profile-info .profile-items ul {
   font-size: 1.4rem;
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 0 2rem 0;
 }
 .profile-info .profile-items ul li {
-  padding: 0 0 0.4rem 0;
+  padding: 0 0 0.5rem 0;
+}
+.profile-info .profile-items ul li:last-child {
+  padding-bottom: 0;
 }
 /* Skills Section
    ========================================================================== */
@@ -256,6 +260,15 @@ section.skills {
 section.skills .resume {
   font-size: 1.6em;
   text-align: center;
+}
+section.skills .resume p {
+  padding-bottom: 0.5rem;
+}
+section.skills .resume li {
+  padding-bottom: 0.5rem;
+}
+section.skills .resume li:last-child {
+  padding-bottom: 0;
 }
 section.skills .resume a {
   text-decoration: underline;
@@ -383,6 +396,15 @@ section.contact {
 .contact-list .contact-item .fa {
   padding: 0 1rem 0 0;
   font-size: 3rem;
+}
+/* Attributions
+   ========================================================================== */
+.attributions {
+  padding: 1em 0;
+  text-align: center;
+  background: #333;
+  background: #333333;
+  color: #ffffff;
 }
 /* Overlay
    ========================================================================== */

@@ -19,7 +19,7 @@ html {
 }
 
 body {
-    background: @primary top center no-repeat url("../img/flag.png");
+    background: @white top center no-repeat url("../img/tropical.png");
     background-attachment: fixed;
     background-size: 175%;
     overflow-x: hidden;
@@ -246,16 +246,22 @@ section.profile {
         text-align: center;
 
         h3 {
+            padding-top: .5rem;
+
             font-size: 1.4em;
             font-weight: @fontWeightBold;
         }
 
         ul {
             font-size: 1.4rem;
-            padding: .5rem 0 1rem 0;
+            padding: .5rem 0 2rem 0;
 
             li {
-                padding: 0 0 .4rem 0;
+                padding: 0 0 .5rem 0;
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
             }
         }
     }
@@ -264,12 +270,23 @@ section.profile {
 /* Skills Section
    ========================================================================== */
 section.skills {
-//    .background(@lightGrey);
     .background(@white);
 
     .resume {
         font-size: 1.6em;
         text-align: center;
+
+        p {
+            padding-bottom: .5rem;
+        }
+
+        li {
+            padding-bottom: .5rem;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
 
         a {
             text-decoration: underline;
@@ -465,6 +482,15 @@ section.contact {
             font-size: 3rem;
         }
     }
+}
+
+/* Attributions
+   ========================================================================== */
+.attributions {
+    padding: 1em 0;
+    text-align: center;
+    .background(@darkGrey);
+    .color(@white);
 }
 
 /* Overlay
