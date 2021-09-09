@@ -272,27 +272,6 @@ section.profile {
 section.skills {
     .background(@white);
 
-    .resume {
-        font-size: 1.6em;
-        text-align: center;
-
-        p {
-            padding-bottom: .5rem;
-        }
-
-        li {
-            padding-bottom: .5rem;
-
-            &:last-child {
-                padding-bottom: 0;
-            }
-        }
-
-        a {
-            text-decoration: underline;
-            color: @green;
-        }
-    }
 }
 
 .skill-list {
@@ -301,6 +280,10 @@ section.skills {
     .skill-group {
         padding: 0 0 2em 0;
         font-size: 1.3em;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
     }
 
     h3 {
@@ -437,6 +420,30 @@ section.job {
                 text-decoration: underline;
             }
 
+        }
+    }
+
+    .resume {
+        padding: 2rem 0 0 0;
+
+        font-size: 1.6em;
+        text-align: center;
+
+        p {
+            padding-bottom: .5rem;
+        }
+
+        li {
+            padding-bottom: .5rem;
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+
+        a {
+            text-decoration: underline;
+            color: @green;
         }
     }
 }

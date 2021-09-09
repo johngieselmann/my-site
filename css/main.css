@@ -257,29 +257,15 @@ section.profile {
 section.skills {
   background: #ffffff;
 }
-section.skills .resume {
-  font-size: 1.6em;
-  text-align: center;
-}
-section.skills .resume p {
-  padding-bottom: 0.5rem;
-}
-section.skills .resume li {
-  padding-bottom: 0.5rem;
-}
-section.skills .resume li:last-child {
-  padding-bottom: 0;
-}
-section.skills .resume a {
-  text-decoration: underline;
-  color: #2fc381;
-}
 .skill-list {
   padding: 5em 0 0 0;
 }
 .skill-list .skill-group {
   padding: 0 0 2em 0;
   font-size: 1.3em;
+}
+.skill-list .skill-group:last-child {
+  padding-bottom: 0;
 }
 .skill-list h3 {
   height: 2em;
@@ -356,6 +342,24 @@ section.job .job-list .description a {
 }
 section.job .job-list .description a:hover {
   text-decoration: underline;
+}
+section.job .resume {
+  padding: 2rem 0 0 0;
+  font-size: 1.6em;
+  text-align: center;
+}
+section.job .resume p {
+  padding-bottom: 0.5rem;
+}
+section.job .resume li {
+  padding-bottom: 0.5rem;
+}
+section.job .resume li:last-child {
+  padding-bottom: 0;
+}
+section.job .resume a {
+  text-decoration: underline;
+  color: #2fc381;
 }
 /* Examples
    ========================================================================== */
