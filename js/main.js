@@ -1,34 +1,33 @@
-(function(window, document, $, undefined){
-
-  /**
+{
+/**
    * The singleton nav menu class.
    */
-  var nav = {
+  const nav = {
     // nav menu state
-    active : false,
+    active: false,
 
     // nav elements
-    $moveEls : null,
-    $toggle : null,
-    $gotoEls : null,
+    moveEls: null,
+    toggle: null,
+    gotoEls: null,
 
     /**
      * Initialize the navigation.
      *
      * @return void
      */
-    init : function() {
+    init() {
       // find some elements
-      nav.$moveEls = $(".js-nav-move");
-      nav.$toggle = $(".js-nav-toggle");
-      nav.$gotoEls = $(".js-nav-goto");
+      nav.$moveEls = document.querySelectorAll(".js-nav-move");
+      nav.$toggle = document.querySelectorAll(".js-nav-toggle");
+      nav.$gotoEls = document.querySelectorAll(".js-nav-goto");
 
       // bind some events
-      nav.$toggle.on("click", nav.toggle);
-      nav.$gotoEls.on("click", nav.gotoSection);
+      nav.$toggle.forEach((el) => el.addEventListener("click", nav.toggle));
+      nav.$gotoEls.forEach((el) => el.addEventListener("click", nav.gotoSection));
 
-      $(window).on("scroll", nav.setActiveMenu);
-      nav.setActiveMenu(null);
+      window.addEventListener("scroll", nav.setActiveMenu);
+      nav.setActiveMenu();
     },
 
     /**
@@ -39,16 +38,16 @@
      * @param bool inactive
      * @return void
      */
-    toggle : function(e, inactive) {
+    toggle(e, inactive) {
       inactive = inactive || false;
 
       if (nav.active || inactive === true) {
-        nav.$moveEls.removeClass("nav-active");
-        $(".js-overlay").removeClass("active");
+        nav.$moveEls.forEach((el) => el.classList.remove("nav-active"));
+        document.querySelector(".js-overlay").classList.remove("active");
         nav.active = false;
       } else {
-        nav.$moveEls.addClass("nav-active");
-        $(".js-overlay").addClass("active");
+        nav.$moveEls.forEach((el) => el.classList.add("nav-active"));
+        document.querySelector(".js-overlay").classList.add("active");
         nav.active = true;
       }
     },
@@ -56,87 +55,66 @@
     /**
      * Get the section related to the link.
      *
-     * @param jQuery $el
-     * @return jQuery
+     * @param Element el
+     * @return Element
      */
-    getSection : function($el) {
-      var name = $el.attr("data-rel");
-      return $("[data-section='" + name + "']");
+    getSection(el) {
+      const name = el.getAttribute("data-rel");
+      return document.querySelector(`[data-section='${name}']`);
     },
 
     /**
      * Go to a section of the site.
      *
      * @param Event e
-     * @param obj el
+     * @param Element el
      * @return void
      */
-    gotoSection : function(e, el) {
+    gotoSection(e, el) {
+      const target = el || e.target;
+      const section = nav.getSection(target);
+      const sectionTop = section.offsetTop;
 
-      var $el = el || $(this);
-//      nav.$gotoEls.removeClass("active");
-//      $el.addClass("active");
-
-      var $section = nav.getSection($el);
-      var sectionTop = $section.offset().top;
-
-      // since we have to hide the nav menu, let that happen before
-      // we navigate to the section
-      setTimeout(function() {
-        $("html, body").animate({
-          scrollTop : sectionTop
-        }, 300);
+      setTimeout(() => {
+        window.scrollTo({
+          top: sectionTop,
+          behavior: "smooth"
+        });
       }, 250);
 
-      // hide the menu
       nav.toggle(null, true);
-
-//      setTimeout(nav.setActiveMenu, 500);
       e.preventDefault();
     },
 
     /**
      * Set the active menu item based on our scroll location on the page.
-     * I realize this is probably not the most optimized, but it is quick
-     * and dirty for a website that no one even visits so fuck 'em. Wow,
-     * terrible attitude, I apologize.
      *
      * @param Event e
      * @return void
      */
-    setActiveMenu : function(e) {
+    setActiveMenu(e) {
+      const scrollPos = window.scrollY;
 
-      // first see if we are at the bottom of the page so we can just
-      // set the last item, otherwise we will check all the others
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        nav.$gotoEls.removeClass("active");
-        nav.$gotoEls.last().addClass("active");
+      if (scrollPos === 0) {
+        nav.$gotoEls.forEach((el) => el.classList.remove("active"));
+        nav.$gotoEls[0].classList.add("active");
         return;
       }
 
-      // get the current scroll position
-      var scrollPos = $(document).scrollTop();
+      const windowHeight = window.innerHeight;
+      const bodyHeight = document.body.offsetHeight;
 
-      // check if we are at the top to avoid some more looping
-      if (scrollPos <= 0) {
-        nav.$gotoEls.removeClass("active");
-        nav.$gotoEls.first().addClass("active");
+      if (scrollPos + windowHeight >= bodyHeight) {
+        nav.$gotoEls.forEach((el) => el.classList.remove("active"));
+        nav.$gotoEls[nav.$gotoEls.length - 1].classList.add("active");
         return;
       }
 
-      // check all the sections of the nav links to see how we are
-      // in relation to the scroll position
-      nav.$gotoEls.each(function () {
-        var $link = $(this);
-        var $section = nav.getSection($link);
-
-        // if the top of the section is above the top of the document
-        // and the bottom of the section is below the scrollPos
-        if (  $section.position().top <= scrollPos
-          && ($section.position().top + $section.height()) > scrollPos
-        ) {
-          nav.$gotoEls.removeClass("active");
-          $link.addClass("active");
+      nav.$gotoEls.forEach((el) => el.classList.remove("active"));
+      nav.$gotoEls.forEach((link) => {
+        const section = nav.getSection(link);
+        if (section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+          link.classList.add("active");
         }
       });
     }
@@ -145,25 +123,17 @@
   /**
    * The site singleton class.
    */
-  var site = {
-
-    // some templates for using later
-//    temp : {
-//      $skillName : $("<div></div>").addClass("skill-name"),
-//      $skillVal : $("<div></div>").addClass("skill-value"),
-//      $skillInd : $("<span></span>").addClass("skill-indicator")
-//    },
-
+  const site = {
     /**
      * Initialize the site.
      *
      * @return void
      */
-    init : function() {
+    init() {
       site.scale();
       site.createSkillsList();
 
-      $(window).on("resize", site.scale);
+      window.addEventListener("resize", site.scale);
     },
 
     /**
@@ -171,11 +141,9 @@
      *
      * @return void
      */
-    scale : function() {
-      var $main = $("main");
-      $main.css({
-        "min-height" : $(window).outerHeight()
-      });
+    scale() {
+      const main = document.querySelector("main");
+      main.style.minHeight = `${window.innerHeight}px`;
     },
 
     /**
@@ -183,31 +151,29 @@
      *
      * @return void
      */
-    createSkillsList : function() {
-      var $list = $(".js-skill-list");
+    createSkillsList() {
+      const list = document.querySelector(".js-skill-list");
 
-      for (var i in skills) {
-        var group = skills[i];
+      for (const category in skills) {
+        if (Object.hasOwnProperty.call(skills, category)) {
+          const group = skills[category];
+          const groupName = document.createElement("h3");
+          groupName.textContent = category;
+          const skillGroup = document.createElement("div");
+          skillGroup.classList.add("skill-group", "column-item");
+          skillGroup.appendChild(groupName);
+          const skillItems = document.createElement("div");
+          skillItems.classList.add("skill-items");
 
-        // create a group for these skills
-        var $groupName = $("<h3></h3>")
-          .text(i);
-        var $skillGroup = $("<div></div>")
-          .addClass("skill-group")
-          .addClass("column-item")
-          .append($groupName);
-        var $skillItems = $("<div></div>")
-          .addClass("skill-items");
+          for (const skill in group) {
+            if (Object.hasOwnProperty.call(group, skill)) {
+              skillItems.appendChild(site.createSkillItem(skill, group[skill]));
+            }
+          }
 
-        // create all the line items for this group
-        for (var name in group) {
-          $skillItems.append(site.createSkillItem(name, group[name]));
+          skillGroup.appendChild(skillItems);
+          list.appendChild(skillGroup);
         }
-
-        $skillGroup.append($skillItems);
-
-        // add the group to the list
-        $list.append($skillGroup);
       }
     },
 
@@ -216,179 +182,140 @@
      *
      * @param str name
      * @param int value
-     * @return jquery
+     * @return Element
      */
-    createSkillItem : function(name, value) {
-      // make sure the value is an integer
-      value = parseInt(value);
+    createSkillItem(name, value) {
+      const item = document.createElement("div");
+      item.classList.add("skill-item");
 
-      var $item = $("<div></div>")
-        .addClass("skill-item");
+      const skillName = document.createElement("div");
+      skillName.classList.add("skill-name");
+      skillName.textContent = name;
+      item.appendChild(skillName);
 
-      // add the name to the item
-      var $name = $("<div></div>")
-        .addClass("skill-name")
-        .text(name);
-      $item.append(name);
-
-//      var $value = $("<div></div>")
-//        .addClass("skill-value");
-//
-//      // create an indicator for each possible value
-//      var maxVal = 5;
-//      for (var i = 1; i <= maxVal; i++) {
-//        var $ind = $("<span></span>")
-//          .addClass("skill-indicator");
-//
-//        // flag this indicator as having the value
-//        if (i <= value) {
-//          $ind.addClass("fa fa-circle")
-//            .addClass("full");
-//        } else {
-//          $ind.addClass("fa fa-circle-o")
-//            .addClass("empty");
-//        }
-//
-//        // add the indicator to the value element
-//        $value.append($ind);
-//      }
-//
-//      // add the value bar to the item
-//      $item.append($value);
-
-      return $item;
+      return item;
     }
   };
 
   /**
-   * My skills as an object. The numbers should be my perceived skill level
-   * where 1 = minimal and 5 = max. These get rendered into the view via
-   * the site class so I don't have to write that HTML repeatedly.
+   * My skills as an object.
    */
-   //jam
-  var skills = {
-    "Languages" : {
-      "PHP"         : 3,
-      "Python"      : 3,
-      "JavaScript"  : 3,
-      "HTML"        : 3,
-      "CSS"         : 3,
-      "Ruby"        : 3,
-      "Java"        : 3,
-      "Objective-C" : 3,
+  const skills = {
+    "Languages": {
+      "PHP": 3,
+      "Python": 3,
+      "JavaScript": 3,
+      "HTML": 3,
+      "CSS": 3,
+      "Ruby": 3,
+      "Java": 3,
+      "Objective-C": 3,
     },
-    "Frameworks"  : {
-      "REST"        : 3,
-      "Laravel"     : 3,
-      "Zend"        : 3,
-      "React"       : 3,
-      "Vue"         : 3,
-      "Angular"     : 3,
-      "jQuery"      : 3,
-      "Node"        : 3,
-      "Rails"       : 3,
-      "Sass"        : 3,
-      "WordPress"   : 3,
+    "Frameworks": {
+      "REST": 3,
+      "Laravel": 3,
+      "Zend": 3,
+      "React": 3,
+      "Vue": 3,
+      "Angular": 3,
+      "jQuery": 3,
+      "Node": 3,
+      "Rails": 3,
+      "Sass": 3,
+      "WordPress": 3,
     },
-    "Data"  : {
-      "MySQL"         : 3,
-      "MongoDB"       : 3,
-      "DynamoDB"      : 3,
-      "Redis"         : 3,
-      "Elasticsearch" : 3,
+    "Data": {
+      "MySQL": 3,
+      "MongoDB": 3,
+      "DynamoDB": 3,
+      "Redis": 3,
+      "Elasticsearch": 3,
     },
-    "Infrastructure"  : {
-      "AWS"           : 3,
-      "GCP"           : 3,
-      "Vagrant"       : 3,
-      "Docker"        : 3,
-      "Kubernetes"    : 3,
-      "Chef"          : 3,
+    "Infrastructure": {
+      "AWS": 3,
+      "GCP": 3,
+      "Vagrant": 3,
+      "Docker": 3,
+      "Kubernetes": 3,
+      "Chef": 3,
     },
-    "Tools" : {
-      "Vim"         : 3,
-      "Git"         : 3,
-      "Slack"       : 3,
-      "Jira"        : 3,
-      "Confluence"  : 3,
-      "Adobe Suite" : 3,
-      "Stripe"      : 3,
-      "Segment"     : 3,
-      "DataDog"     : 3,
-      "Postman"     : 3,
+    "Tools": {
+      "Vim": 3,
+      "Git": 3,
+      "Slack": 3,
+      "Jira": 3,
+      "Confluence": 3,
+      "Adobe Suite": 3,
+      "Stripe": 3,
+      "Segment": 3,
+      "DataDog": 3,
+      "Postman": 3,
     }
   };
 
-  //easter has come early (unless it's actually easter)
-  //in that case, it's right on time.
+  // Easter egg functionality
   if (window.addEventListener) {
-    var strokes = [];
-    var animating = false;
-    var eggs = {
-      "scorpion" : {
-        "selector" : ".js-scorpion",
-        "audio"  : ".js-scorpion-audio",
-        "keys"   : "37,37,66"
+    const strokes = [];
+    let animating = false;
+
+    const eggs = {
+      "scorpion": {
+        "selector": ".js-scorpion",
+        "audio": ".js-scorpion-audio",
+        "keys": "37,37,66"
       },
-      "raiden"  : {
-        "selector" : ".js-raiden",
-        "keys"   : "1,2,3"
+      "raiden": {
+        "selector": ".js-raiden",
+        "keys": "1,2,3"
       }
     };
 
-    window.addEventListener("keydown", function(e){
-      //don't listen if we are currently animating
+    window.addEventListener("keydown", function (e) {
       if (animating) {
         return true;
       }
 
-      //track this keystroke
-      strokes.push( e.keyCode );
+      strokes.push(e.keyCode);
 
-      //now check our eggs for a match
-      for (var i in eggs) {
+      for (const egg in eggs) {
+        if (Object.hasOwnProperty.call(eggs, egg)) {
+          const keys = eggs[egg]["keys"];
+          if (strokes.toString().indexOf(keys) >= 0) {
+            const container = document.querySelector(".js-eggs");
+            const eggEl = document.querySelector(eggs[egg]["selector"]);
 
-        var keys = eggs[i]["keys"];
-        if (strokes.toString().indexOf(keys) >= 0) {
-          
-          //animate the egg
-          var container = $(".js-eggs").show();
-          var egg = $(eggs[i]["selector"]);
-          setTimeout(function() {
-            egg.attr("animate", true);
-            animating = true;
-          }, 0);
+            setTimeout(() => {
+              eggEl.setAttribute("animate", true);
+              animating = true;
+            }, 0);
 
-          //play the audio if we have it
-          var audio = $(eggs[i]["audio"]);
-          if (audio.length) {
-            setTimeout(function() {
-              audio[0].play();
-            }, 800);
+            const audio = document.querySelector(eggs[egg]["audio"]);
+            if (audio) {
+              setTimeout(() => {
+                audio.play();
+              }, 800);
+            }
+
+            setTimeout(() => {
+              eggEl.setAttribute("deanimate", true);
+
+              setTimeout(() => {
+                eggEl.removeAttribute("animate");
+                eggEl.removeAttribute("deanimate");
+                container.style.display = "none";
+                animating = false;
+                strokes.length = 0;
+              }, 1000);
+
+            }, 3200);
           }
-
-          //deanimate the egg
-          setTimeout(function() {
-            egg.attr("deanimate", true);
-
-            //now clear the animation attributes
-            setTimeout(function() {
-              egg.removeAttr("animate").removeAttr("deanimate");
-              container.hide();
-              animating = false;
-              strokes = [];
-            }, 1000);
-
-          }, 3200);
         }
       }
     }, true);
   }
 
-  $(document).ready(function() {
+  document.addEventListener("DOMContentLoaded", () => {
     nav.init();
     site.init();
   });
-
-
-})(window, document, $, undefined);
+}
