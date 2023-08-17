@@ -281,7 +281,10 @@
         if (Object.hasOwnProperty.call(eggs, egg)) {
           const keys = eggs[egg]["keys"];
           if (strokes.toString().indexOf(keys) >= 0) {
+
             const container = document.querySelector(".js-eggs");
+            container.style.display = "block";
+
             const eggEl = document.querySelector(eggs[egg]["selector"]);
 
             setTimeout(() => {
